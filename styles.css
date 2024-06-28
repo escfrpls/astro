@@ -14,24 +14,18 @@ header {
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between; /* Распределение элементов по краям */
-    align-items: center; /* Выравнивание элементов по центру по вертикали */
 }
 
 /* Название галереи */
 header #brand {
-    flex: 1; /* Занимает все доступное пространство слева */
-}
-
-header #brand h1 {
-    margin: 0;
+    display: inline-block; /* Для корректного выравнивания */
+    margin-right: auto; /* Выравнивание по левому краю */
 }
 
 /* Меню навигации */
 header nav {
-    flex: 1; /* Занимает все доступное пространство посередине */
-    margin: 0 20px; /* Отступы для красоты */
+    display: inline-block; /* Для корректного выравнивания */
+    margin-left: auto; /* Выравнивание по правому краю */
 }
 
 header nav ul {
@@ -60,13 +54,13 @@ header nav ul li a:hover {
 
 /* Переключатель темы */
 #theme-switcher {
-    flex: 1; /* Занимает все доступное пространство справа */
-    text-align: right; /* Выравнивание элементов по правому краю */
+    display: inline-block; /* Для корректного выравнивания */
+    margin-left: 20px; /* Отступ слева от меню */
+    margin-right: 0; /* Убираем лишний отступ справа */
 }
 
 #theme-switcher label {
     color: #fff;
-    margin-right: 10px;
 }
 
 /* Стили для темной темы */
@@ -79,7 +73,7 @@ body.dark-theme header {
     background-color: #555; /* Темный фон для верхнего блока */
 }
 
-body.dark-theme header #brand h1,
+body.dark-theme header #brand,
 body.dark-theme header nav ul li a,
 body.dark-theme #theme-switcher label {
     color: #ddd; /* Цвет текста для темной темы */
