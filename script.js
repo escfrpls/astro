@@ -37,4 +37,48 @@ function showAbout() {
     const aboutText = images.about[0].text;
     const aboutDiv = document.createElement('div');
     aboutDiv.innerHTML = aboutText;
-   
+    gallery.appendChild(aboutDiv);
+}
+
+function showGallery(category) {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+
+    images[category].forEach(image => {
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.caption;
+        img.onclick = () => showModal(image.src, image.caption);
+        gallery.appendChild(img);
+    });
+}
+
+function showModal(src, caption) {
+    const modal = document.getElementById('modal');
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal-caption').innerText = caption;
+    modal.style.display = 'flex';
+}
+
+document.getElementById('modal').onclick = () => {
+    document.getElementById('modal').style.display = 'none';
+};
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    const themeButton = document.querySelector('.toggle-theme');
+    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
+}
+
+// Обработчики событий для пунктов меню
+document.querySelectorAll('header nav ul li a').forEach(item => {
+    item.addEventListener('click', event => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (переход по ссылке)
+        const category = item.textContent.toLowerCase(); // Получаем текст ссылки и делаем его в нижнем регистре
+        showGallery(category); // Вызываем функцию showGallery с соответствующей категорией
+    });
+});
+
+window.onload = function() {
+    showAbout(); // При загрузке страницы сначала показываем страницу "About"
+};
