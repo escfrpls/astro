@@ -83,8 +83,8 @@ header nav ul li a:hover {
     z-index: 999;
     padding: 20px;
     display: flex; /* Выравнивание по верхнему краю */
-    align-items: flex-start; /* Выравнивание по левому краю */
-    justify-content: flex-start; /* Выравнивание по левому краю */
+    align-items: center; /* Выравнивание по центру вертикали */
+    justify-content: center; /* Выравнивание по центру горизонтали */
 }
 
 .modal img {
@@ -96,7 +96,7 @@ header nav ul li a:hover {
 
 .modal p {
     color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
-    text-align: left; /* Выравнивание текста по левому краю */
+    text-align: center; /* Выравнивание текста по центру */
     margin-top: 10px; /* Верхний отступ для подписи */
 }
 
