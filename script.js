@@ -51,12 +51,21 @@ document.getElementById('modal').onclick = () => {
 
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
+    const themeButton = document.querySelector('.toggle-theme');
+    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Светлая' : 'Темная';
 }
 
 function toggleLanguage() {
     const currentLang = document.documentElement.lang;
-    document.documentElement.lang = currentLang === 'ru' ? 'en' : 'ru';
+    const newLang = currentLang === 'ru' ? 'en' : 'ru';
+    document.documentElement.lang = newLang;
     const toggleBtn = document.querySelector('.toggle-language');
-    toggleBtn.innerText = currentLang === 'ru' ? 'RU' : 'EN';
-    // You can also update the text content of other elements here based on the selected language
+    toggleBtn.innerText = newLang === 'ru' ? 'EN' : 'RU';
+
+    // Update text content based on language
+    const galleryTitle = document.getElementById('gallery-title');
+    galleryTitle.innerText = newLang === 'ru' ? 'Галерея' : 'Gallery';
+    document.querySelector('.toggle-theme').innerText = newLang === 'ru' 
+        ? (document.body.classList.contains('dark-theme') ? 'Светлая' : 'Темная') 
+        : (document.body.classList.contains('dark-theme') ? 'Light' : 'Dark');
 }
