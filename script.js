@@ -11,10 +11,12 @@ const images = {
         { src: 'img/sun2.jpg', caption: 'Sun 2' }
     ],
     moon: [
-        { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, 10mm)' }
+        { src: 'img/moon1.jpg', caption: 'Moon 1' },
+        { src: 'img/moon2.jpg', caption: 'Moon 2' }
     ],
     solar: [
-        { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn, First Photo, 27.06.2024, (Xiaomi Mi 10T Pro, 25mm + Barlow x2)' }
+        { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn, First Photo, 27.06.2024, (Xiaomi Mi 10T Pro, 25mm + Barlow x2)' },
+        { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, 10mm)' }
     ],
     galaxy: [
         { src: 'img/galaxy1.jpg', caption: 'Galaxy 1' },
@@ -69,3 +71,7 @@ function toggleTheme() {
     const themeButton = document.querySelector('.toggle-theme');
     themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
 }
+
+window.onload = function() {
+    showAbout();
+};
