@@ -71,3 +71,7 @@ function toggleTheme() {
     const themeButton = document.querySelector('.toggle-theme');
     themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
 }
+
+window.onload = function() {
+    showAbout();
+};
