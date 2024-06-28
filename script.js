@@ -58,7 +58,7 @@ function showGallery(category) {
 function showModal(src, caption) {
     const modal = document.getElementById('modal');
     document.getElementById('modal-img').src = src;
-    document.getElementById('modal-caption').innerText = caption;
+    document.getElementById('modal-caption').innerHTML = `<p>${caption}</p>`;
     modal.style.display = 'flex';
 }
 
@@ -71,7 +71,3 @@ function toggleTheme() {
     const themeButton = document.querySelector('.toggle-theme');
     themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
 }
-
-window.onload = function() {
-    showAbout();
-};
