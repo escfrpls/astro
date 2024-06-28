@@ -1,12 +1,14 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Использование шрифта Roboto из Google Fonts */
-    text-align: center; /* Центрирование текста на странице */
-    line-height: 1.6; /* Увеличение межстрочного интервала для лучшей читаемости */
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Светлый фон для основного контента */
+    color: #333; /* Цвет текста для светлой темы */
 }
 
 header {
-    background-color: #333; /* Темный фон для заголовка */
-    color: #fff; /* Белый цвет текста */
+    background-color: #333;
+    color: #fff;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -29,24 +31,26 @@ header nav ul li a {
     transition: background-color 0.3s ease;
 }
 
+/* Подсветка при наведении для светлой темы */
 header nav ul li a:hover {
     background-color: #555;
 }
 
 /* Стили для темной темы */
 body.dark-theme {
-    background-color: #222; /* Темный фон для темной темы */
-    color: #fff; /* Белый цвет текста */
+    background-color: #222;
+    color: #ddd; /* Цвет текста для темной темы */
 }
 
 body.dark-theme header {
-    background-color: #555; /* Темный фон для заголовка в темной теме */
+    background-color: #555;
 }
 
 body.dark-theme header nav ul li a {
-    color: #fff; /* Белый цвет текста ссылок в темной теме */
+    color: #ddd;
 }
 
+/* Подсветка при наведении для темной темы */
 body.dark-theme header nav ul li a:hover {
-    background-color: #777; /* Подсветка при наведении в темной теме */
+    background-color: #777;
 }
