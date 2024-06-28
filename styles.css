@@ -15,7 +15,7 @@ header {
     padding: 20px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between; /* Выравнивание элементов по краям */
+    justify-content: space-between; /* Расположение элементов по краям */
     align-items: center; /* Выравнивание элементов по вертикали */
 }
 
@@ -79,59 +79,10 @@ header nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
     z-index: 999;
     padding: 20px;
+    align-items: center; /* Выравнивание контента по центру */
+    justify-content: center; /* Выравнивание контента по центру */
 }
 
 .modal img {
     max-width: 90%; /* Максимальная ширина изображения в модальном окне */
-    max-height: 90%; /* Максимальная высота изображения в модальном окне */
-    margin: auto; /* Центрирование изображения по центру модального окна */
-    display: block;
-}
-
-.modal p {
-    color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
-    text-align: center; /* Выравнивание текста по центру */
-    margin-top: 10px; /* Верхний отступ для подписи */
-}
-
-/* Стили для темной темы */
-body.dark-theme {
-    background-color: #222; /* Темный фон для основного контента */
-    color: #ddd; /* Цвет текста для темной темы */
-}
-
-body.dark-theme header {
-    background-color: #555; /* Темный фон для верхнего блока */
-}
-
-body.dark-theme header #gallery-title,
-body.dark-theme header nav ul li a {
-    color: #ddd; /* Цвет текста для темной темы */
-}
-
-/* Подсветка при наведении для темной темы */
-body.dark-theme header nav ul li a:hover {
-    background-color: #777;
-}
-
-/* Дополнительные стили для мобильных устройств */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Отображение элементов вертикально на мобильных устройствах */
-        align-items: flex-start; /* Выравнивание элементов слева */
-    }
-    
-    header nav ul {
-        justify-content: flex-start; /* Выравнивание пунктов меню слева */
-    }
-    
-    .gallery img {
-        width: 120px; /* Уменьшенная ширина миниатюры для мобильных устройств */
-    }
-}
-
-@media (max-width: 576px) {
-    .gallery img {
-        width: 100px; /* Дополнительно уменьшенная ширина миниатюры для маленьких экранов */
-    }
-}
+    max-height: 90%; /* Максимальная высота изображения в модальном ок
