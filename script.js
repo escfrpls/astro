@@ -37,20 +37,4 @@ function showAbout() {
     const aboutText = images.about[0].text;
     const aboutDiv = document.createElement('div');
     aboutDiv.innerHTML = aboutText;
-    gallery.appendChild(aboutDiv);
-}
-
-function showGallery(category) {
-    const gallery = document.getElementById('gallery');
-    gallery.innerHTML = '';
-
-    images[category].forEach(image => {
-        const img = document.createElement('img');
-        img.src = image.src;
-        img.alt = image.caption;
-        img.onclick = () => showModal(image.src, image.caption);
-        gallery.appendChild(img);
-    });
-}
-
-function showModal(src,
+   
