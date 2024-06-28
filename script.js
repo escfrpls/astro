@@ -30,6 +30,13 @@ const images = {
     ]
 };
 
+function showAbout() {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+
+    const aboutText = images.about[0].text;
+
+
 
 function showAbout() {
     const gallery = document.getElementById('gallery');
