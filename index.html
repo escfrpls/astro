@@ -1,53 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Astrophoto</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключение шрифта Roboto с Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
-
 <body>
     <header>
-        <div id="brand">
-            <h1>Welcome!</h1>
-            <p>This is blog/archive of my photos and stargazing observations.</p>
-            <p>At the moment I am starting my way in astronomy, I can say I am realizing my childhood dream.</p>
-            <p>The equipment I'm currently using: Sky-Watcher BK 1309 EQ2 130/900, 10mm (90x) and 25mm(36x) Kellner
-                Super, Barlow lens x2. For photos, I use Xiaomi Mi 10T Pro.<p>
-            <p>My github source <a href="https://github.com/escfrpls/astro/">here</a>.</p>
-        </div>
+        <div id="gallery-title">Astrophoto</div>
         <nav>
             <ul>
-                <li><a href="#" id="about-link">About</a></li>
-                <li><a href="#" id="sun-link">Sun</a></li>
-                <li><a href="#" id="moon-link">Moon</a></li>
-                <li><a href="#" id="solar-system-link">Solar System</a></li>
-                <li><a href="#" id="galaxies-link">Galaxies</a></li>
-                <li><a href="#" id="comets-link">Comets</a></li>
-                <li><a href="#" id="other-link">Other Objects</a></li>
+                <li><a href="#" onclick="showAbout()">About Me</a></li>
+                <li><a href="#" onclick="showGallery('sun')">Sun</a></li>
+                <li><a href="#" onclick="showGallery('moon')">Moon</a></li>
+                <li><a href="#" onclick="showGallery('solar')">Solar System</a></li>
+                <li><a href="#" onclick="showGallery('galaxy')">Galaxies</a></li>
+                <li><a href="#" onclick="showGallery('comet')">Comets</a></li>
+                <li><a href="#" onclick="showGallery('other')">Other Objects</a></li>
             </ul>
         </nav>
+        <button class="toggle-theme" onclick="toggleTheme()">Dark</button>
     </header>
-
-    <div class="gallery" id="solar">
-        <!-- Фотографии для Solar будут здесь -->
+    <div class="gallery" id="gallery"></div>
+    <div class="modal" id="modal">
+        <img id="modal-img" src="" alt="">
+        <p id="modal-caption"></p>
     </div>
-
-    <div class="gallery" id="galaxies">
-        <!-- Фотографии для Galaxies будут здесь -->
-    </div>
-
-    <div class="gallery" id="comets">
-        <!-- Фотографии для Comets будут здесь -->
-    </div>
-
-    <div class="gallery" id="other">
-        <!-- Фотографии для Other Objects будут здесь -->
-    </div>
-
     <script src="script.js"></script>
 </body>
-
 </html>
