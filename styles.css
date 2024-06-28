@@ -86,7 +86,7 @@ nav ul li ul li {
     color: white;
     text-align: center;
 }
-.toggle-theme, .toggle-language {
+.toggle-theme {
     cursor: pointer;
     padding: 10px;
     border: none;
