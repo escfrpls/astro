@@ -26,6 +26,37 @@ const images = {
     ]
 };
 
+const translations = {
+    ru: {
+        galleryTitle: 'Астрофото',
+        menu: 'Меню',
+        about: 'Обо мне',
+        sun: 'Солнце',
+        moon: 'Луна',
+        solar: 'Солнечная система',
+        galaxy: 'Галактики',
+        comet: 'Кометы',
+        other: 'Другие объекты',
+        dark: 'Темная',
+        light: 'Светлая',
+        languageToggle: 'EN'
+    },
+    en: {
+        galleryTitle: 'Astrophoto',
+        menu: 'Menu',
+        about: 'About Me',
+        sun: 'Sun',
+        moon: 'Moon',
+        solar: 'Solar System',
+        galaxy: 'Galaxies',
+        comet: 'Comets',
+        other: 'Other Objects',
+        dark: 'Dark',
+        light: 'Light',
+        languageToggle: 'RU'
+    }
+};
+
 function showGallery(category) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
@@ -52,20 +83,35 @@ document.getElementById('modal').onclick = () => {
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
     const themeButton = document.querySelector('.toggle-theme');
-    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Светлая' : 'Темная';
+    const currentLang = document.documentElement.lang;
+    themeButton.innerText = document.body.classList.contains('dark-theme') ? translations[currentLang].light : translations[currentLang].dark;
 }
 
 function toggleLanguage() {
     const currentLang = document.documentElement.lang;
     const newLang = currentLang === 'ru' ? 'en' : 'ru';
     document.documentElement.lang = newLang;
-    const toggleBtn = document.querySelector('.toggle-language');
-    toggleBtn.innerText = newLang === 'ru' ? 'EN' : 'RU';
 
     // Update text content based on language
-    const galleryTitle = document.getElementById('gallery-title');
-    galleryTitle.innerText = newLang === 'ru' ? 'Галерея' : 'Gallery';
-    document.querySelector('.toggle-theme').innerText = newLang === 'ru' 
-        ? (document.body.classList.contains('dark-theme') ? 'Светлая' : 'Темная') 
-        : (document.body.classList.contains('dark-theme') ? 'Light' : 'Dark');
+    const elementsToTranslate = [
+        { id: 'gallery-title', key: 'galleryTitle' },
+        { selector: '.toggle-theme', key: 'dark' },
+        { selector: '.toggle-language', key: 'languageToggle' },
+    ];
+    
+    elementsToTranslate.forEach(item => {
+        const element = item.id ? document.getElementById(item.id) : document.querySelector(item.selector);
+        element.innerText = translations[newLang][item.key];
+    });
+
+    // Update menu items
+    const menuItems = document.querySelectorAll('nav ul li ul li a');
+    const menuKeys = ['about', 'sun', 'moon', 'solar', 'galaxy', 'comet', 'other'];
+    menuItems.forEach((item, index) => {
+        item.innerText = translations[newLang][menuKeys[index]];
+    });
+
+    // Update theme button text
+    const themeButton = document.querySelector('.toggle-theme');
+    themeButton.innerText = document.body.classList.contains('dark-theme') ? translations[newLang].light : translations[newLang].dark;
 }
