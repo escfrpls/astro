@@ -59,15 +59,4 @@ function showModal(src, caption) {
     const modal = document.getElementById('modal');
     document.getElementById('modal-img').src = src;
     document.getElementById('modal-caption').innerText = caption;
-    modal.style.display = 'flex';
-}
-
-document.getElementById('modal').onclick = () => {
-    document.getElementById('modal').style.display = 'none';
-};
-
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    const themeButton = document.querySelector('.toggle-theme');
-    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
-}
+    modal.style.display = 'flex
