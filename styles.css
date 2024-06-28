@@ -16,6 +16,12 @@ header {
     margin-bottom: 20px;
 }
 
+/* Название галереи */
+header #gallery-title {
+    font-size: 24px; /* Размер шрифта для названия галереи */
+    margin-bottom: 10px;
+}
+
 /* Меню навигации */
 header nav {
     margin-bottom: 10px;
