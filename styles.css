@@ -56,7 +56,7 @@ header nav ul li a:hover {
 }
 
 .gallery img {
-    max-width: 100%;
+    max-width: calc(100% / 8); /* Уменьшение размера миниатюр в 8 раз */
     height: auto;
     cursor: pointer;
     transition: transform 0.2s ease;
