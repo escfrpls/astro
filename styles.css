@@ -3,15 +3,15 @@ body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     line-height: 1.6;
-    background-color: #f0f0f0; /* Светлый фон для основного контента */
-    color: #333; /* Цвет текста для светлой темы */
+    background-color: #222; /* Темный фон для основного контента */
+    color: #ddd; /* Цвет текста для темной темы */
     margin: 0;
 }
 
 /* Стили для верхнего блока с заголовком и меню */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #555; /* Темный фон для верхнего блока */
+    color: #ddd;
     padding: 20px;
     margin-bottom: 20px;
     display: flex; /* Добавлено для использования flexbox */
@@ -37,15 +37,15 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #ddd;
     text-decoration: none;
     padding: 10px;
     transition: background-color 0.3s ease;
 }
 
-/* Подсветка при наведении для светлой темы */
+/* Подсветка при наведении для темной темы */
 header nav ul li a:hover {
-    background-color: #555;
+    background-color: #777;
 }
 
 /* Стили для блока с переключателем темы */
@@ -58,7 +58,7 @@ header nav ul li a:hover {
     padding: 10px;
     background-color: transparent;
     border: none;
-    color: #fff;
+    color: #ddd;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -113,26 +113,6 @@ header nav ul li a:hover {
     color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
     text-align: left; /* Выравнивание текста по левому краю */
     margin-top: 10px; /* Верхний отступ для подписи */
-}
-
-/* Стили для темной темы */
-body.dark-theme {
-    background-color: #222; /* Темный фон для основного контента */
-    color: #ddd; /* Цвет текста для темной темы */
-}
-
-body.dark-theme header {
-    background-color: #555; /* Темный фон для верхнего блока */
-}
-
-body.dark-theme header nav ul li a,
-body.dark-theme .theme-switcher .toggle-theme {
-    color: #ddd; /* Цвет текста для темной темы */
-}
-
-/* Подсветка при наведении для темной темы */
-body.dark-theme header nav ul li a:hover {
-    background-color: #777;
 }
 
 /* Стили для блока About Me */
