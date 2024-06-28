@@ -35,14 +35,6 @@ function showAbout() {
     gallery.innerHTML = '';
 
     const aboutText = images.about[0].text;
-
-
-
-function showAbout() {
-    const gallery = document.getElementById('gallery');
-    gallery.innerHTML = '';
-
-    const aboutText = images.about[0].text;
     const aboutDiv = document.createElement('div');
     aboutDiv.innerHTML = aboutText;
     gallery.appendChild(aboutDiv);
