@@ -14,17 +14,24 @@ header {
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по краям */
+    align-items: center; /* Выравнивание элементов по центру по вертикали */
 }
 
 /* Название галереи */
-header #gallery-title {
-    font-size: 24px; /* Размер шрифта для названия галереи */
-    margin-bottom: 10px;
+header #brand {
+    flex: 1; /* Занимает все доступное пространство слева */
+}
+
+header #brand h1 {
+    margin: 0;
 }
 
 /* Меню навигации */
 header nav {
-    margin-bottom: 10px;
+    flex: 1; /* Занимает все доступное пространство посередине */
+    margin: 0 20px; /* Отступы для красоты */
 }
 
 header nav ul {
@@ -51,50 +58,15 @@ header nav ul li a:hover {
     background-color: #555;
 }
 
-/* Галерея миниатюр */
-.gallery {
-    display: flex; /* Расположение миниатюр в ряд */
-    flex-wrap: wrap; /* Перенос миниатюр на новую строку при необходимости */
-    justify-content: center; /* Выравнивание миниатюр по центру */
-    gap: 10px; /* Отступ между миниатюрами */
-    padding: 20px;
+/* Переключатель темы */
+#theme-switcher {
+    flex: 1; /* Занимает все доступное пространство справа */
+    text-align: right; /* Выравнивание элементов по правому краю */
 }
 
-.gallery img {
-    width: 150px; /* Ширина миниатюры */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.1); /* Увеличение миниатюры при наведении */
-}
-
-/* Модальное окно для увеличенных изображений */
-.modal {
-    display: none; /* Скрытое модальное окно по умолчанию */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
-    z-index: 999;
-    padding: 20px;
-}
-
-.modal img {
-    max-width: 90%; /* Максимальная ширина изображения в модальном окне */
-    max-height: 90%; /* Максимальная высота изображения в модальном окне */
-    margin: auto; /* Центрирование изображения по центру модального окна */
-    display: block;
-}
-
-.modal p {
-    color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
-    text-align: center; /* Выравнивание текста по центру */
-    margin-top: 10px; /* Верхний отступ для подписи */
+#theme-switcher label {
+    color: #fff;
+    margin-right: 10px;
 }
 
 /* Стили для темной темы */
@@ -107,8 +79,9 @@ body.dark-theme header {
     background-color: #555; /* Темный фон для верхнего блока */
 }
 
-body.dark-theme header #gallery-title,
-body.dark-theme header nav ul li a {
+body.dark-theme header #brand h1,
+body.dark-theme header nav ul li a,
+body.dark-theme #theme-switcher label {
     color: #ddd; /* Цвет текста для темной темы */
 }
 
