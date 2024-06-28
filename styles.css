@@ -4,6 +4,7 @@ body {
     line-height: 1.6;
     background-color: #f0f0f0; /* Светлый фон для основного контента */
     color: #333; /* Цвет текста для светлой темы */
+    margin: 0;
 }
 
 header {
@@ -13,14 +14,24 @@ header {
     margin-bottom: 20px;
 }
 
+header #gallery-title {
+    font-size: 24px; /* Размер шрифта для названия галереи */
+    margin-bottom: 10px;
+}
+
+header nav {
+    margin-bottom: 10px;
+}
+
 header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex; /* Расположение пунктов меню в одну линию */
+    justify-content: center; /* Выравнивание по центру */
 }
 
 header nav ul li {
-    display: inline-block;
     margin-right: 20px;
 }
 
@@ -36,6 +47,50 @@ header nav ul li a:hover {
     background-color: #555;
 }
 
+.gallery {
+    display: flex; /* Расположение миниатюр в ряд */
+    flex-wrap: wrap; /* Перенос миниатюр на новую строку при необходимости */
+    justify-content: center; /* Выравнивание миниатюр по центру */
+    gap: 10px; /* Отступ между миниатюрами */
+    padding: 20px;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Увеличение миниатюры при наведении */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    padding: 20px;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+}
+
+.modal p {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
 /* Стили для темной темы */
 body.dark-theme {
     background-color: #222;
@@ -46,6 +101,7 @@ body.dark-theme header {
     background-color: #555;
 }
 
+body.dark-theme header #gallery-title,
 body.dark-theme header nav ul li a {
     color: #ddd;
 }
