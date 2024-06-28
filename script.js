@@ -11,7 +11,7 @@ const images = {
         { src: 'img/sun2.jpg', caption: 'Sun 2' }
     ],
     moon: [
-        { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, 10mm)', description: 'Description of the moon image here' },
+        { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, 10mm)' },
     ],
     solar: [
         { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn, First Photo, 27.06.2024, (Xiaomi Mi 10T Pro, 25mm + Barlow x2)' },
@@ -48,24 +48,18 @@ function showGallery(category) {
         const img = document.createElement('img');
         img.src = image.src;
         img.alt = image.caption;
-        img.onclick = () => showModal(image.src, image.caption, image.description); // Передача описания в showModal
+        img.onclick = () => showModal(image.src, image.caption);
         gallery.appendChild(img);
     });
 }
 
-function showModal(src, caption, description) {
+function showModal(src, caption) {
     const modal = document.getElementById('modal');
     document.getElementById('modal-img').src = src;
-    document.getElementById('modal-caption').innerText = caption;
     
-    // Очистка предыдущего описания
+    // Отображение подписи
     const modalCaption = document.getElementById('modal-caption');
-    modalCaption.innerHTML = '';
-    
-    // Добавление нового описания
-    const modalDescription = document.createElement('p');
-    modalDescription.innerText = description;
-    modalCaption.appendChild(modalDescription);
+    modalCaption.innerText = caption;
     
     modal.style.display = 'flex';
 }
