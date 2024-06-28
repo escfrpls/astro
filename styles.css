@@ -1,34 +1,52 @@
-/* Общие стили для меню */
-nav ul {
+body {
+    font-family: 'Roboto', sans-serif; /* Использование шрифта Roboto из Google Fonts */
+    text-align: center; /* Центрирование текста на странице */
+    line-height: 1.6; /* Увеличение межстрочного интервала для лучшей читаемости */
+}
+
+header {
+    background-color: #333; /* Темный фон для заголовка */
+    color: #fff; /* Белый цвет текста */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
+header nav ul li {
     display: inline-block;
-    position: relative;
+    margin-right: 20px;
 }
 
-nav ul li a {
-    display: block;
-    padding: 10px 20px;
+header nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: #fff; /* Цвет текста для светлой темы */
+    padding: 10px;
     transition: background-color 0.3s ease;
 }
 
-/* Подсветка при наведении для светлой темы */
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+header nav ul li a:hover {
+    background-color: #555;
 }
 
 /* Стили для темной темы */
-body.dark-theme nav ul li a {
-    color: #000; /* Цвет текста для темной темы */
+body.dark-theme {
+    background-color: #222; /* Темный фон для темной темы */
+    color: #fff; /* Белый цвет текста */
 }
 
-/* Подсветка при наведении для темной темы */
-body.dark-theme nav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+body.dark-theme header {
+    background-color: #555; /* Темный фон для заголовка в темной теме */
+}
+
+body.dark-theme header nav ul li a {
+    color: #fff; /* Белый цвет текста ссылок в темной теме */
+}
+
+body.dark-theme header nav ul li a:hover {
+    background-color: #777; /* Подсветка при наведении в темной теме */
 }
