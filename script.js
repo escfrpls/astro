@@ -3,7 +3,7 @@ const images = {
         { text: `<h1>Welcome!</h1>
                 <p>This is blog/archive of my photos and stargazing observations.</p>
                 <p>At the moment I am starting my way in astronomy, I can say I am realizing my childhood dream.</p>
-                <p>The equipment I'm currently using: Sky-Watcher BK 1309 EQ2 130/900, 10mm (90x) and 25mm(36x) Kellner Super, Barlow lens x2. For photos, I use Xiaomi Mi 10T Pro.</p>
+                <p>The equipment I'm currently using: Sky-Watcher BK 1309 EQ2 130/900, 10mm (90x) and 25mm(36x), 5mm (x257) Kellner Super, Barlow lens x2, Barlow lens x1. For photos, I use Xiaomi Mi 10T Pro, Canon 450d, Jupiter37a, Lenovo thinkpad x201</p>
                 <p>My github source <a href="https://github.com/escfrpls/astro/">here</a>.</p>` }
     ],
     sun: [
