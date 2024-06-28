@@ -15,8 +15,8 @@ const images = {
         { src: 'img/moon2.jpg', caption: 'Moon 2' }
     ],
     solar: [
-        { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn First Photo' },
-        { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon First Photo' }
+        { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn, First Photo, 27.06.2024, (Xiaomi Mi 10T Pro, 25mm + Barlow x2)' },
+        { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, 10mm)' }
     ],
     galaxy: [
         { src: 'img/galaxy1.jpg', caption: 'Galaxy 1' },
