@@ -8,7 +8,7 @@
     <!-- Подключение шрифта Roboto с Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
-<body>
+<body class="dark-theme">
     <header>
         <nav>
             <ul>
@@ -22,7 +22,7 @@
             </ul>
         </nav>
         <div class="theme-switcher">
-            <button class="toggle-theme" onclick="toggleTheme()">Dark</button>
+            <button class="toggle-theme" onclick="toggleTheme()">Light</button>
         </div>
     </header>
     <div class="gallery" id="gallery"></div>
@@ -30,6 +30,7 @@
         <img id="modal-img" src="" alt="">
         <p id="modal-caption"></p>
     </div>
+    <div class="about-container" id="about-container"></div>
     <script src="script.js"></script>
 </body>
 </html>
