@@ -14,9 +14,6 @@ header {
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between; /* Расположение элементов по краям */
-    align-items: center; /* Выравнивание элементов по вертикали */
 }
 
 /* Меню навигации */
@@ -79,10 +76,22 @@ header nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
     z-index: 999;
     padding: 20px;
-    align-items: center; /* Выравнивание контента по центру */
-    justify-content: center; /* Выравнивание контента по центру */
 }
 
 .modal img {
     max-width: 90%; /* Максимальная ширина изображения в модальном окне */
-    max-height: 90%; /* Максимальная высота изображения в модальном ок
+    max-height: 90%; /* Максимальная высота изображения в модальном окне */
+    margin: auto; /* Центрирование изображения по центру модального окна */
+    display: block;
+}
+
+.modal p {
+    color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 10px; /* Верхний отступ для подписи */
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    background-color: #222; /* Темный фон для основного контента */
+    color: #
