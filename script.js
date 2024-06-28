@@ -44,27 +44,27 @@ function showGallery(category) {
     } else {
         images[category].forEach(image => {
             const img = document.createElement('img');
-            img.src = image.src;
-            img.alt = image.caption;
-            img.onclick = () => showModal(image.src, image.caption);
-            gallery.appendChild(img);
+            img.src = image.src; // Установка пути к изображению
+            img.alt = image.caption; // Установка подписи изображения
+            img.onclick = () => showModal(image.src, image.caption); // Назначение обработчика события клика
+            gallery.appendChild(img); // Добавление изображения в галерею
         });
     }
 }
 
 function showModal(src, caption) {
     const modal = document.getElementById('modal');
-    document.getElementById('modal-img').src = src;
-    document.getElementById('modal-caption').innerText = caption;
-    modal.style.display = 'flex';
+    document.getElementById('modal-img').src = src; // Установка источника изображения в модальном окне
+    document.getElementById('modal-caption').innerText = caption; // Установка подписи изображения в модальном окне
+    modal.style.display = 'flex'; // Отображение модального окна
 }
 
 document.getElementById('modal').onclick = () => {
-    document.getElementById('modal').style.display = 'none';
+    document.getElementById('modal').style.display = 'none'; // Скрытие модального окна при клике на него
 };
 
 function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
+    document.body.classList.toggle('dark-theme'); // Переключение темы сайта
     const themeButton = document.querySelector('.toggle-theme');
-    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
+    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark'; // Изменение текста кнопки переключения темы
 }
