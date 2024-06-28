@@ -71,7 +71,7 @@ header nav ul li a:hover {
 .gallery {
     display: flex; /* Расположение миниатюр в ряд */
     flex-wrap: wrap; /* Перенос миниатюр на новую строку при необходимости */
-    justify-content: flex-start; /* Выравнивание миниатюр по левому краю */
+    justify-content: center; /* Выравнивание миниатюр по центру */
     gap: 10px; /* Отступ между миниатюрами */
     padding: 20px;
 }
@@ -133,4 +133,12 @@ body.dark-theme .theme-switcher .toggle-theme {
 /* Подсветка при наведении для темной темы */
 body.dark-theme header nav ul li a:hover {
     background-color: #777;
+}
+
+/* Стили для блока About Me */
+.about-container {
+    max-width: 600px; /* Максимальная ширина блока */
+    margin: 0 auto; /* Выравнивание по центру */
+    padding: 20px;
+    text-align: left; /* Выравнивание текста по левому краю */
 }
