@@ -3,7 +3,7 @@ const images = {
         { text: `<h1>Welcome!</h1>
                 <p>This is blog/archive of my photos and stargazing observations.</p>
                 <p>At the moment I am starting my way in astronomy, I can say I am realizing my childhood dream.</p>
-                <p>The equipment I'm currently using: Sky-Watcher BK 1309 EQ2 130/900, 10mm (90x) and 25mm(36x) Kellner Super, Barlow lens x2. For photos, I use Xiaomi Mi 10T Pro.<p>
+                <p>The equipment I'm currently using: Sky-Watcher BK 1309 EQ2 130/900, 10mm (90x) and 25mm(36x) Kellner Super, Barlow lens x2. For photos, I use Xiaomi Mi 10T Pro.</p>
                 <p>My github source <a href="https://github.com/escfrpls/astro/">here</a>.</p>` }
     ],
     sun: [
@@ -32,39 +32,42 @@ const images = {
     ]
 };
 
+function showAbout() {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+
+    const aboutText = images.about[0].text;
+    const aboutDiv = document.createElement('div');
+    aboutDiv.innerHTML = aboutText;
+    gallery.appendChild(aboutDiv);
+}
+
 function showGallery(category) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
 
-    if (category === 'about') {
-        const aboutText = images[category][0].text;
-        const aboutDiv = document.createElement('div');
-        aboutDiv.innerHTML = aboutText;
-        gallery.appendChild(aboutDiv);
-    } else {
-        images[category].forEach(image => {
-            const img = document.createElement('img');
-            img.src = image.src; // Установка пути к изображению
-            img.alt = image.caption; // Установка подписи изображения
-            img.onclick = () => showModal(image.src, image.caption); // Назначение обработчика события клика
-            gallery.appendChild(img); // Добавление изображения в галерею
-        });
-    }
+    images[category].forEach(image => {
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.caption;
+        img.onclick = () => showModal(image.src, image.caption);
+        gallery.appendChild(img);
+    });
 }
 
 function showModal(src, caption) {
     const modal = document.getElementById('modal');
-    document.getElementById('modal-img').src = src; // Установка источника изображения в модальном окне
-    document.getElementById('modal-caption').innerText = caption; // Установка подписи изображения в модальном окне
-    modal.style.display = 'flex'; // Отображение модального окна
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal-caption').innerText = caption;
+    modal.style.display = 'flex';
 }
 
 document.getElementById('modal').onclick = () => {
-    document.getElementById('modal').style.display = 'none'; // Скрытие модального окна при клике на него
+    document.getElementById('modal').style.display = 'none';
 };
 
 function toggleTheme() {
-    document.body.classList.toggle('dark-theme'); // Переключение темы сайта
+    document.body.classList.toggle('dark-theme');
     const themeButton = document.querySelector('.toggle-theme');
-    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark'; // Изменение текста кнопки переключения темы
+    themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
 }
