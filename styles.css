@@ -71,7 +71,7 @@ header nav ul li a:hover {
 .gallery {
     display: flex; /* Расположение миниатюр в ряд */
     flex-wrap: wrap; /* Перенос миниатюр на новую строку при необходимости */
-    justify-content: center; /* Выравнивание миниатюр по центру */
+    justify-content: flex-start; /* Выравнивание миниатюр по левому краю */
     gap: 10px; /* Отступ между миниатюрами */
     padding: 20px;
 }
