@@ -1,3 +1,4 @@
+/* Общие стили для страницы */
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -7,6 +8,7 @@ body {
     margin: 0;
 }
 
+/* Стили для верхнего блока с заголовком и меню */
 header {
     background-color: #333;
     color: #fff;
@@ -14,11 +16,13 @@ header {
     margin-bottom: 20px;
 }
 
+/* Название галереи */
 header #gallery-title {
     font-size: 24px; /* Размер шрифта для названия галереи */
     margin-bottom: 10px;
 }
 
+/* Меню навигации */
 header nav {
     margin-bottom: 10px;
 }
@@ -47,6 +51,7 @@ header nav ul li a:hover {
     background-color: #555;
 }
 
+/* Галерея миниатюр */
 .gallery {
     display: flex; /* Расположение миниатюр в ряд */
     flex-wrap: wrap; /* Перенос миниатюр на новую строку при необходимости */
@@ -57,7 +62,7 @@ header nav ul li a:hover {
 
 .gallery img {
     width: 150px; /* Ширина миниатюры */
-    height: auto;
+    height: auto; /* Автоматическая высота для сохранения пропорций */
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -66,44 +71,45 @@ header nav ul li a:hover {
     transform: scale(1.1); /* Увеличение миниатюры при наведении */
 }
 
+/* Модальное окно для увеличенных изображений */
 .modal {
-    display: none;
+    display: none; /* Скрытое модальное окно по умолчанию */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
     z-index: 999;
     padding: 20px;
 }
 
 .modal img {
-    max-width: 90%;
-    max-height: 90%;
-    margin: auto;
+    max-width: 90%; /* Максимальная ширина изображения в модальном окне */
+    max-height: 90%; /* Максимальная высота изображения в модальном окне */
+    margin: auto; /* Центрирование изображения по центру модального окна */
     display: block;
 }
 
 .modal p {
-    color: #fff;
-    text-align: center;
-    margin-top: 10px;
+    color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 10px; /* Верхний отступ для подписи */
 }
 
 /* Стили для темной темы */
 body.dark-theme {
-    background-color: #222;
+    background-color: #222; /* Темный фон для основного контента */
     color: #ddd; /* Цвет текста для темной темы */
 }
 
 body.dark-theme header {
-    background-color: #555;
+    background-color: #555; /* Темный фон для верхнего блока */
 }
 
 body.dark-theme header #gallery-title,
 body.dark-theme header nav ul li a {
-    color: #ddd;
+    color: #ddd; /* Цвет текста для темной темы */
 }
 
 /* Подсветка при наведении для темной темы */
