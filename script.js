@@ -70,15 +70,6 @@ function toggleTheme() {
     themeButton.innerText = document.body.classList.contains('dark-theme') ? 'Light' : 'Dark';
 }
 
-// Обработчики событий для пунктов меню
-document.querySelectorAll('header nav ul li a').forEach(item => {
-    item.addEventListener('click', event => {
-        event.preventDefault(); // Предотвращаем действие по умолчанию (переход по ссылке)
-        const category = item.textContent.toLowerCase(); // Получаем текст ссылки и делаем его в нижнем регистре
-        showGallery(category); // Вызываем функцию showGallery с соответствующей категорией
-    });
-});
-
 window.onload = function() {
-    showAbout(); // При загрузке страницы сначала показываем страницу "About"
+    showAbout();
 };
