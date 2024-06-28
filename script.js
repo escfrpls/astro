@@ -55,9 +55,15 @@ function showGallery(category) {
 
 function showModal(src, caption) {
     const modal = document.getElementById('modal');
-    document.getElementById('modal-img').src = src;
-    document.getElementById('modal-caption').innerText = caption;
+    const modalImg = document.getElementById('modal-img');
+    const modalCaption = document.getElementById('modal-caption');
+
+    modalImg.src = src;
+    modalCaption.innerText = caption;
+
     modal.style.display = 'flex';
+    modal.style.alignItems = 'flex-start'; // Выравнивание по верхнему краю
+    modal.style.justifyContent = 'flex-start'; // Выравнивание по левому краю
 }
 
 document.getElementById('modal').onclick = () => {
