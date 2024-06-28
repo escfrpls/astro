@@ -5,11 +5,11 @@ const images = {
         { src: 'img/sun2.jpg', caption: 'Sun 2' }
     ],
     moon: [
-        { src: 'img/moon1.jpg', caption: 'Moon 1' },
+        { src: 'moon_first_photo_28.06.2024.png', caption: 'First photo Moon, 28.06.2024' },
         { src: 'img/moon2.jpg', caption: 'Moon 2' }
     ],
     solar: [
-        { src: 'img/solar1.jpg', caption: 'Solar System 1' },
+        { src: 'Saturn_first_photo_27.06.2024.png', caption: 'First photo Saturn, 27.06.2024' },
         { src: 'img/solar2.jpg', caption: 'Solar System 2' }
     ],
     galaxy: [
