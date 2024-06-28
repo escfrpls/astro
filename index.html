@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astrophoto</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Подключение шрифта Roboto с Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
     <header>
-        <div id="gallery-title">Astrophoto</div>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showAbout()">About Me</a></li>
-                <li><a href="#" onclick="showGallery('sun')">Sun</a></li>
-                <li><a href="#" onclick="showGallery('moon')">Moon</a></li>
-                <li><a href="#" onclick="showGallery('solar')">Solar System</a></li>
-                <li><a href="#" onclick="showGallery('galaxy')">Galaxies</a></li>
-                <li><a href="#" onclick="showGallery('comet')">Comets</a></li>
-                <li><a href="#" onclick="showGallery('other')">Other Objects</a></li>
-            </ul>
-        </nav>
-        <button class="toggle-theme" onclick="toggleTheme()">Dark</button>
+        <div class="header-content">
+            <div id="brand">
+                <h1>Astrophoto</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="about">About</a></li>
+                    <li><a href="#" id="sun">Sun</a></li>
+                    <li><a href="#" id="moon">Moon</a></li>
+                    <li><a href="#" id="solar-system">Solar System</a></li>
+                    <li><a href="#" id="galaxies">Galaxies</a></li>
+                    <li><a href="#" id="comets">Comets</a></li>
+                    <li><a href="#" id="other-objects">Other Objects</a></li>
+                </ul>
+            </nav>
+            <div id="theme-switcher">
+                <label for="theme-toggle">Dark Mode</label>
+                <input type="checkbox" id="theme-toggle">
+            </div>
+        </div>
     </header>
-    <div class="gallery" id="gallery"></div>
-    <div class="modal" id="modal">
-        <img id="modal-img" src="" alt="">
-        <p id="modal-caption"></p>
+
+    <div class="gallery">
+        <!-- Галерея фотографий -->
     </div>
+
+    <div class="modal">
+        <!-- Модальное окно для увеличенных изображений -->
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <p id="caption"></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
