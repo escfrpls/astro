@@ -1,1 +1,37 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div>Галерея</div>
+        <nav>
+            <ul>
+                <li><a href="#">Меню</a>
+                    <ul>
+                        <li><a href="#" onclick="showGallery('about')">Обо мне</a></li>
+                        <li><a href="#" onclick="showGallery('sun')">Солнце</a></li>
+                        <li><a href="#" onclick="showGallery('moon')">Луна</a></li>
+                        <li><a href="#" onclick="showGallery('solar')">Солнечная система</a></li>
+                        <li><a href="#" onclick="showGallery('galaxy')">Галактики</a></li>
+                        <li><a href="#" onclick="showGallery('comet')">Кометы</a></li>
+                        <li><a href="#" onclick="showGallery('other')">Другие объекты</a></li>
+                    </ul>
+                </li>
+                <li><button class="toggle-theme" onclick="toggleTheme()">Тема</button></li>
+                <li><button class="toggle-language" onclick="toggleLanguage()">EN</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="gallery" id="gallery"></div>
+    <div class="modal" id="modal">
+        <img id="modal-img" src="" alt="">
+        <p id="modal-caption"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
