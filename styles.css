@@ -16,6 +16,12 @@ header {
     margin-bottom: 20px;
 }
 
+/* Название галереи */
+header #gallery-title {
+    font-size: 24px; /* Размер шрифта для названия галереи */
+    margin-bottom: 10px;
+}
+
 /* Меню навигации */
 header nav {
     margin-bottom: 10px;
@@ -94,4 +100,19 @@ header nav ul li a:hover {
 /* Стили для темной темы */
 body.dark-theme {
     background-color: #222; /* Темный фон для основного контента */
-    color: #
+    color: #ddd; /* Цвет текста для темной темы */
+}
+
+body.dark-theme header {
+    background-color: #555; /* Темный фон для верхнего блока */
+}
+
+body.dark-theme header #gallery-title,
+body.dark-theme header nav ul li a {
+    color: #ddd; /* Цвет текста для темной темы */
+}
+
+/* Подсветка при наведении для темной темы */
+body.dark-theme header nav ul li a:hover {
+    background-color: #777;
+}
