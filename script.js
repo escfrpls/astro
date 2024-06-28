@@ -58,7 +58,7 @@ function showGallery(category) {
 function showModal(src, caption) {
     const modal = document.getElementById('modal');
     document.getElementById('modal-img').src = src;
-    document.getElementById('modal-caption').innerHTML = `<p>${caption}</p>`;
+    document.getElementById('modal-caption').innerHTML = caption; // Исправлено здесь
     modal.style.display = 'flex';
 }
 
