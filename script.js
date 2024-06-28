@@ -30,6 +30,7 @@ const images = {
     ]
 };
 
+
 function showAbout() {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
