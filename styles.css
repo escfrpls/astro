@@ -14,18 +14,22 @@ header {
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по краям */
+    align-items: center; /* Выравнивание элементов по центру по вертикали */
 }
 
 /* Название галереи */
 header #brand {
-    display: inline-block; /* Для корректного выравнивания */
+    margin-left: 20px; /* Отступ слева */
+    font-size: 1.5em; /* Размер шрифта */
     margin-right: auto; /* Выравнивание по левому краю */
 }
 
 /* Меню навигации */
 header nav {
-    display: inline-block; /* Для корректного выравнивания */
-    margin-left: auto; /* Выравнивание по правому краю */
+    flex-grow: 1; /* Занимает все доступное пространство */
+    text-align: center; /* Выравнивание пунктов меню по центру */
 }
 
 header nav ul {
@@ -54,9 +58,8 @@ header nav ul li a:hover {
 
 /* Переключатель темы */
 #theme-switcher {
-    display: inline-block; /* Для корректного выравнивания */
-    margin-left: 20px; /* Отступ слева от меню */
-    margin-right: 0; /* Убираем лишний отступ справа */
+    margin-right: 20px; /* Отступ справа */
+    margin-left: auto; /* Выравнивание по правому краю */
 }
 
 #theme-switcher label {
