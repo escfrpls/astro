@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astrophoto</title>
+    <title>About Me</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <div class="header-content">
-            <h1 id="brand">Astrophoto</h1>
-            <nav>
-                <ul>
-                    <li><a href="#" id="about">About</a></li>
-                    <li><a href="#" id="sun">Sun</a></li>
-                    <li><a href="#" id="moon">Moon</a></li>
-                    <li><a href="#" id="solar-system">Solar System</a></li>
-                    <li><a href="#" id="galaxies">Galaxies</a></li>
-                    <li><a href="#" id="comets">Comets</a></li>
-                    <li><a href="#" id="other-objects">Other Objects</a></li>
-                </ul>
-            </nav>
-            <div id="theme-switcher">
-                <label for="theme-toggle">Dark Mode</label>
-                <input type="checkbox" id="theme-toggle">
-            </div>
+        <div id="brand">
+            <h1>Welcome!</h1>
+            <p>This is blog/archive of my photos and stargazing observations.</p>
+            <p>At the moment I am starting my way in astronomy, I can say I am realizing my childhood dream.</p>
+            <p>The equipment I'm currently using: Sky-Watcher BK 1309 EQ2 130/900, 10mm (90x) and 25mm(36x) Kellner
+                Super, Barlow lens x2. For photos, I use Xiaomi Mi 10T Pro.<p>
+            <p>My github source <a href="https://github.com/escfrpls/astro/">here</a>.</p>
         </div>
     </header>
 
-    <div class="gallery">
-        <!-- Галерея фотографий -->
+    <div class="gallery" id="solar">
+        <!-- Фотографии для Solar будут здесь -->
     </div>
 
-    <div class="modal">
-        <!-- Модальное окно для увеличенных изображений -->
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img">
-        <p id="caption"></p>
+    <div class="gallery" id="galaxies">
+        <!-- Фотографии для Galaxies будут здесь -->
+    </div>
+
+    <div class="gallery" id="comets">
+        <!-- Фотографии для Comets будут здесь -->
+    </div>
+
+    <div class="gallery" id="other">
+        <!-- Фотографии для Other Objects будут здесь -->
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
