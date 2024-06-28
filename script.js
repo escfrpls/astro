@@ -15,8 +15,8 @@ const images = {
         { src: 'img/moon2.jpg', caption: 'Moon 2' }
     ],
     solar: [
-        { src: 'img/solar1.jpg', caption: 'Solar System 1' },
-        { src: 'img/solar2.jpg', caption: 'Solar System 2' }
+        { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn First Photo' },
+        { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon First Photo' }
     ],
     galaxy: [
         { src: 'img/galaxy1.jpg', caption: 'Galaxy 1' },
