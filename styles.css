@@ -11,7 +11,7 @@ body {
 header {
     background-color: #555; /* Темный фон для верхнего блока */
     color: #ddd;
-    padding: 20px;
+    padding: 10px; /* Уменьшаем внутренний отступ */
     margin-bottom: 20px;
     display: flex; /* Добавлено для использования flexbox */
     justify-content: space-between; /* Распределение элементов по краям блока */
@@ -32,13 +32,13 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-right: 20px;
+    margin-right: 10px; /* Уменьшаем отступ между пунктами меню */
 }
 
 header nav ul li a {
     color: #ddd;
     text-decoration: none;
-    padding: 10px;
+    padding: 8px; /* Уменьшаем внутренний отступ */
     transition: background-color 0.3s ease;
 }
 
@@ -85,4 +85,4 @@ header nav ul li a:hover {
 .modal img {
     max-width: 90%; /* Максимальная ширина изображения в модальном окне */
     max-height: 90%; /* Максимальная высота изображения в модальном окне */
-    margin: auto; /* Центрирование изображения по центру модального окна */
+   
