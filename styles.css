@@ -82,20 +82,18 @@ header nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
     z-index: 999;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .modal img {
     max-width: 90%; /* Максимальная ширина изображения в модальном окне */
-    max-height: 70vh; /* Максимальная высота изображения в модальном окне */
-    margin-bottom: 20px; /* Отступ между изображением и текстом */
+    max-height: 90%; /* Максимальная высота изображения в модальном окне */
+    margin: auto; /* Центрирование изображения по центру модального окна */
+    display: block;
 }
 
-.modal-caption {
+.modal p {
     color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
     text-align: center; /* Выравнивание текста по центру */
-    margin-top: 10px; /* Верхний отступ для подписи */
-}
+    margin-top: 10px; /* Верхний отступ для под
