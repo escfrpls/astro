@@ -82,8 +82,8 @@ header nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
     z-index: 999;
     padding: 20px;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    justify-content: flex-start; /* Выравнивание по левому краю */
 }
 
 .modal img {
@@ -95,5 +95,26 @@ header nav ul li a:hover {
 
 .modal p {
     color: #fff; /* Цвет текста для подписи под изображением в модальном окне */
-    text-align: left; /* Выравнивание текста по центру */
-    margin-top: 10px; /* Верхний отступ для под
+    text-align: left; /* Выравнивание текста по левому краю */
+    margin-top: 10px; /* Верхний отступ для подписи */
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    background-color: #222; /* Темный фон для основного контента */
+    color: #ddd; /* Цвет текста для темной темы */
+}
+
+body.dark-theme header {
+    background-color: #555; /* Темный фон для верхнего блока */
+}
+
+body.dark-theme header #gallery-title,
+body.dark-theme header nav ul li a {
+    color: #ddd; /* Цвет текста для темной темы */
+}
+
+/* Подсветка при наведении для темной темы */
+body.dark-theme header nav ul li a:hover {
+    background-color: #777;
+}
