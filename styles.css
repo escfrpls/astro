@@ -14,12 +14,9 @@ header {
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
-}
-
-/* Название галереи */
-header #gallery-title {
-    font-size: 24px; /* Размер шрифта для названия галереи */
-    margin-bottom: 10px;
+    display: flex; /* Добавлено для использования flexbox */
+    justify-content: space-between; /* Распределение элементов по краям блока */
+    align-items: center; /* Выравнивание элементов по вертикали */
 }
 
 /* Меню навигации */
@@ -49,6 +46,25 @@ header nav ul li a {
 /* Подсветка при наведении для светлой темы */
 header nav ul li a:hover {
     background-color: #555;
+}
+
+/* Стили для блока с переключателем темы */
+.theme-switcher {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+}
+
+.theme-switcher .toggle-theme {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-switcher .toggle-theme:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Галерея миниатюр */
@@ -109,8 +125,8 @@ body.dark-theme header {
     background-color: #555; /* Темный фон для верхнего блока */
 }
 
-body.dark-theme header #gallery-title,
-body.dark-theme header nav ul li a {
+body.dark-theme header nav ul li a,
+body.dark-theme .theme-switcher .toggle-theme {
     color: #ddd; /* Цвет текста для темной темы */
 }
 
