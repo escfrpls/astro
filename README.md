@@ -1,1 +1,1 @@
-Small project (archive), my way of exploring our vast cosmos.
+Small project (archive), my road of exploring our vast cosmos.
