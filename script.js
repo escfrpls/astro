@@ -7,8 +7,7 @@ const images = {
                 <p>My github source <a href="https://github.com/escfrpls/astro/">here</a>.</p>` }
     ],
     sun: [
-        { src: 'img/sun_19.10.2024.png', caption: 'First Sun, 19.10.2024, (Xiaomi Mi 10T Pro, Super 25mm)' },
-        { src: 'img/sun2.jpg', caption: 'Sun 2' }
+        { src: 'img/sun_19.10.2024.png', caption: 'First Sun, 19.10.2024, (Xiaomi Mi 10T Pro, Super 25mm)' }
     ],
     moon: [
         { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, Super 25mm)' },
