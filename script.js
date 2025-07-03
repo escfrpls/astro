@@ -26,7 +26,7 @@ const images = {
         { src: 'img/comet2.jpg', caption: 'Comet 2' }
     ],
     other: [
-        { src: 'img/Noctilucent cloud 03.06.2025.jpg', caption: 'Noctilucent cloud, 03.07.2025, (Xiaomi Mi 10T Pro)' },
+        { src: 'img/Noctilucent cloud 03.06.2025.png', caption: 'Noctilucent cloud, 03.07.2025, (Xiaomi Mi 10T Pro)' },
         { src: 'img/other2.jpg', caption: 'Other Object 2' }
     ]
 };
