@@ -27,7 +27,7 @@ const images = {
     ],
     other: [
         { src: 'img/Noctilucent cloud 03.07.2025.png', caption: 'Noctilucent cloud, 03.07.2025, (Xiaomi Mi 10T Pro)' },
-        { src: 'img/other2.jpg', caption: 'Other Object 2' }
+        { src: 'img/Pleiades_first_photo_08.09.2025.png', caption: 'Pleiades, 09.08.2025, (Xiaomi Mi 10T Pro + Super 10mm)' },
     ]
 };
 
