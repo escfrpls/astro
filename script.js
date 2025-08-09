@@ -8,6 +8,7 @@ const images = {
     ],
     sun: [
         { src: 'img/sun_19.10.2024.png', caption: 'First Sun, 19.10.2024, (Xiaomi Mi 10T Pro, Super 25mm)' }
+        { src: 'img/sun_08.08.2025.png', caption: 'Sun 09.08.2025, (Xiaomi Mi 10T Pro, Super 25mm)' }
     ],
     moon: [
         { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, Super 25mm)' },
