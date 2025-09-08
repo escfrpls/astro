@@ -13,8 +13,8 @@ const images = {
     moon: [
         { src: 'img/moon_first_photo_28.06.2024.png', caption: 'Moon, First Photo, 28.06.2024, (Xiaomi Mi 10T Pro, Super 25mm)' },
         { src: 'img/moon_20.07.2024.png', caption: 'Moon, 20.07.2024, (Xiaomi Mi 10T Pro, Super 25mm, ND96-0.9)' },
-        { src: 'img/Supermoon_19.10.2024.png', caption: 'Supermoon, 18.10.2024, (Xiaomi Mi 10T Pro, Super 25mm, ND96-0.9)' }
-        { src: 'img/red_moon-09.09.2025.png', caption: 'Red Moon, 09.09.2025, (Xiaomi Mi 10T Pro, Super 10mm)' }
+        { src: 'img/Supermoon_19.10.2024.png', caption: 'Supermoon, 18.10.2024, (Xiaomi Mi 10T Pro, Super 25mm, ND96-0.9)' },
+        { src: 'img/red_moon-09.09.2025.png',  caption: 'Red Moon, 09.09.2025, (Xiaomi Mi 10T Pro, Super 10mm)' }
     ],
     solar: [
         { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn, First Photo, 27.06.2024, (Xiaomi Mi 10T Pro, Super 10mm + Barlow x2)' },
