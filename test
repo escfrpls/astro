@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио астрофотографии - собрание снимков космоса, планет и звезд">
+    <meta name="keywords" content="астрофотография, космос, астрономия, портфолио">
+    <meta name="author" content="YOUR_NAME">
+    <meta property="og:title" content="Astrophoto Portfolio">
+    <meta property="og:description" content="Портфолио астрофотографии">
+    <meta property="og:type" content="website">
+    <title>Astrophoto - Портфолио астрофотографии</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1b2a 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            padding: 2rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+            border-bottom-color: #00d4ff;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-card:hover {
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .photo-date {
+            font-size: 0.9rem;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-description {
+            font-size: 0.95rem;
+            color: #c0c0c0;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .photo-specs {
+            font-size: 0.85rem;
+            color: #888888;
+            background: rgba(0, 212, 255, 0.1);
+            padding: 0.75rem;
+            border-radius: 4px;
+            border-left: 3px solid #00d4ff;
+        }
+
+        .about {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .about p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .contact {
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            color: #000;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #888888;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">🌌 Astrophoto</a>
+            <ul>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Герой секция -->
+        <section style="text-align: center; padding: 3rem 0;">
+            <h1>Astrophoto</h1>
+            <p class="subtitle">Путешествие в глубины космоса</p>
+            <p style="font-size: 1.1rem; color: #c0c0c0; max-width: 600px; margin: 0 auto;">
+                Портфолио астрофотографии - собрание снимков планет, звезд и небесных объектов
+            </p>
+        </section>
+
+        <!-- Галерея -->
+        <section id="gallery">
+            <h2>📷 Галерея</h2>
+            <div class="gallery">
+                <!-- Фото 1: Луна -->
+                <article class="photo-card">
+                    <img src="https://via.placeholder.com/400x300?text=Moon" alt="Луна в полнолуние">
+                    <div class="photo-info">
+                        <h3 class="photo-title">Луна в полнолуние</h3>
+                        <time class="photo-date">15 ноября 2025</time>
+                        <p class="photo-description">
+                            Отчетливый снимок полной луны с видимыми кратерами и горами. Идеальные условия для съемки.
+                        </p>
+                        <div class="photo-specs">
+                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2x + IR фильтр<br>
+                            <strong>Экспозиция:</strong> 1/1000 сек, ISO 100
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Фото 2: Юпитер -->
+                <article class="photo-card">
+                    <img src="https://via.placeholder.com/400x300?text=Jupiter" alt="Юпитер с полосами">
+                    <div class="photo-info">
+                        <h3 class="photo-title">Юпитер с полосами</h3>
+                        <time class="photo-date">10 ноября 2025</time>
+                        <p class="photo-description">
+                            Четкое изображение Юпитера со видимыми облачными полосами и Большим красным пятном.
+                        </p>
+                        <div class="photo-specs">
+                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 3x + T-adapter<br>
+                            <strong>Экспозиция:</strong> 1/500 сек, ISO 200
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Фото 3: Сатурн -->
+                <article class="photo-card">
+                    <img src="https://via.placeholder.com/400x300?text=Saturn" alt="Сатурн с кольцами">
+                    <div class="photo-info">
+                        <h3 class="photo-title">Сатурн с кольцами</h3>
+                        <time class="photo-date">5 ноября 2025</time>
+                        <p class="photo-description">
+                            Великолепный вид Сатурна с четко видимыми кольцами и луной Титаном.
+                        </p>
+                        <div class="photo-specs">
+                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2.5x<br>
+                            <strong>Экспозиция:</strong> 1/800 сек, ISO 150
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Фото 4: Марс -->
+                <article class="photo-card">
+                    <img src="https://via.placeholder.com/400x300?text=Mars" alt="Марс в оппозиции">
+                    <div class="photo-info">
+                        <h3 class="photo-title">Марс в оппозиции</h3>
+                        <time class="photo-date">1 ноября 2025</time>
+                        <p class="photo-description">
+                            Красная планета на пике видимости. Видны полярные шапки и темные области.
+                        </p>
+                        <div class="photo-specs">
+                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2x<br>
+                            <strong>Экспозиция:</strong> 1/2000 сек, ISO 100
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Фото 5: Венера -->
+                <article class="photo-card">
+                    <img src="https://via.placeholder.com/400x300?text=Venus" alt="Венера в серпе">
+                    <div class="photo-info">
+                        <h3 class="photo-title">Венера в серпе</h3>
+                        <time class="photo-date">25 октября 2025</time>
+                        <p class="photo-description">
+                            Ярчайший объект ночного неба. Видна серповидная форма благодаря орбитальной позиции.
+                        </p>
+                        <div class="photo-specs">
+                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2x + ND фильтр<br>
+                            <strong>Экспозиция:</strong> 1/5000 сек, ISO 100
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Фото 6: Звезды -->
+                <article class="photo-card">
+                    <img src="https://via.placeholder.com/400x300?text=Stars" alt="Звездное поле">
+                    <div class="photo-info">
+                        <h3 class="photo-title">Звездное поле</h3>
+                        <time class="photo-date">20 октября 2025</time>
+                        <p class="photo-description">
+                            Глубокое звездное поле с множеством звезд разных величин и цветов.
+                        </p>
+                        <div class="photo-specs">
+                            <strong>Оборудование:</strong> Телескоп + камера<br>
+                            <strong>Экспозиция:</strong> 30 сек, ISO 800
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- О проекте -->
+        <section id="about">
+            <h2>🔭 О проекте</h2>
+            <div class="about">
+                <p>
+                    Этот проект представляет собой мое путешествие в мир астрофотографии. Я начал с простого оборудования и постепенно развивал свои навыки наблюдения и фотографии ночного неба.
+                </p>
+                <p>
+                    <strong>Оборудование:</strong> Мои основные инструменты включают камеру ZWO ASI662, различные Barlow линзы, T-адаптеры и фильтры. Это позволяет мне получать детальные снимки планет, луны и звездных полей.
+                </p>
+                <p>
+                    <strong>Цель проекта:</strong> Поделиться красотой нашей вселенной и вдохновить других людей интересоваться астрономией. Каждое фото - результат ночи наблюдений, обработки и постоянного совершенствования техники.
+                </p>
+                <p>
+                    <strong>Методология:</strong> Я использую стек режимов видеозаписи для захвата множества кадров, затем выбираю лучшие и обрабатываю их для максимальной четкости и деталей.
+                </p>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section id="contact">
+            <div class="contact">
+                <h2>📬 Свяжитесь со мной</h2>
+                <p>Заинтересованы в космосе? Хотите обсудить астрофотографию? Свяжитесь со мной!</p>
+                <div class="contact-links">
+                    <a href="mailto:your-email@example.com" class="contact-link">Email</a>
+                    <a href="https://github.com/escfrpls/astro" class="contact-link">GitHub</a>
+                    <a href="https://instagram.com" class="contact-link">Instagram</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Astrophoto. Все права защищены.</p>
+        <p>Сделано с 🌌 для любителей космоса</p>
+    </footer>
+</body>
+</html>
