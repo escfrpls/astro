@@ -18,6 +18,7 @@ const images = {
     ],
     solar: [
         { src: 'img/Saturn_first_photo_27.06.2024.png', caption: 'Saturn, First Photo, 27.06.2024, (Xiaomi Mi 10T Pro, Super 10mm + Barlow x2)' },
+        { src: 'img/Jupiter_16.11.2025_FP_ZWO662.png', caption: 'Jupiter, First Photo, 16.11.2025, ZWO 662 Color + ZWOVideoStack' },
     ],
     galaxy: [
         { src: 'img/galaxy1.jpg', caption: 'Galaxy 1' },
