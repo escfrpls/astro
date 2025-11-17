@@ -1,413 +1,522 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Портфолио астрофотографии - собрание снимков космоса, планет и звезд">
-    <meta name="keywords" content="астрофотография, космос, астрономия, портфолио">
-    <meta name="author" content="YOUR_NAME">
-    <meta property="og:title" content="Astrophoto Portfolio">
-    <meta property="og:description" content="Портфолио астрофотографии">
-    <meta property="og:type" content="website">
-    <title>Astrophoto - Портфолио астрофотографии</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1b2a 100%);
-            min-height: 100vh;
-        }
-
-        header {
-            background: rgba(10, 14, 39, 0.95);
-            padding: 2rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #00d4ff, #0099ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 0.25rem;
-        }
-
-        nav a:hover {
-            color: #00d4ff;
-            border-bottom-color: #00d4ff;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        h1, h2, h3 {
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #00d4ff;
-            margin-bottom: 2rem;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .photo-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .photo-card:hover {
-            border-color: rgba(0, 212, 255, 0.6);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .photo-info {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .photo-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-
-        .photo-date {
-            font-size: 0.9rem;
-            color: #00d4ff;
-            margin-bottom: 0.5rem;
-        }
-
-        .photo-description {
-            font-size: 0.95rem;
-            color: #c0c0c0;
-            flex-grow: 1;
-            margin-bottom: 1rem;
-        }
-
-        .photo-specs {
-            font-size: 0.85rem;
-            color: #888888;
-            background: rgba(0, 212, 255, 0.1);
-            padding: 0.75rem;
-            border-radius: 4px;
-            border-left: 3px solid #00d4ff;
-        }
-
-        .about {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-        }
-
-        .about p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .contact {
-            background: rgba(0, 212, 255, 0.1);
-            border: 2px solid rgba(0, 212, 255, 0.3);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .contact h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .contact-link {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, #00d4ff, #0099ff);
-            color: #000;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-        }
-
-        footer {
-            background: rgba(10, 14, 39, 0.95);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem 1rem;
-            text-align: center;
-            color: #888888;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                gap: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astrophoto</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1b2a 100%);
+      color: #d0d8e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(15,18,27, 0.95);
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      max-width: 950px;
+      margin: 0 auto;
+      justify-content: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #456b89 transparent;
+    }
+    nav::-webkit-scrollbar {
+      height: 6px;
+    }
+    nav::-webkit-scrollbar-thumb {
+      background-color: #456b89;
+      border-radius: 3px;
+    }
+    nav a {
+      color: #a0b0c0;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.25s, color 0.25s;
+      user-select: none;
+      flex-shrink: 0;
+    }
+    nav a:hover,
+    nav a:focus {
+      background: #1f2a3a;
+      color: #c0cbd8;
+      outline: none;
+    }
+    nav a.active {
+      background: #2a3b4d;
+      color: #d0d8e0;
+      cursor: default;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2rem auto 3rem auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    section.tab-content {
+      display: none;
+      animation: fadein 0.5s ease-in-out;
+    }
+    section.tab-content.active {
+      display: block;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #718ca2;
+      letter-spacing: 0.05em;
+      text-shadow: none;
+    }
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #b0bac7;
+    }
+    .about-container {
+      background: rgba(15,18,27, 0.85);
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(50, 75, 100, 0.3);
+      max-width: 720px;
+      margin: 0 auto;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .about-container p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+    .about-container p.intro {
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-align: center;
+      color: #8fa9bf;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+      text-shadow: none;
+    }
+    .equipment-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #809ab3;
+      border-bottom: 1px solid #536b84;
+      padding-bottom: 0.3rem;
+    }
+    .equipment-list {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: 0;
+      margin: 0 auto;
+      max-width: 650px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #9babc1;
+    }
+    .equipment-list li {
+      margin-bottom: 0.45rem;
+      transition: color 0.25s;
+    }
+    .equipment-list li:hover {
+      color: #7ca3c7;
+      cursor: default;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+    article.photo-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(70, 105, 140, 0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    article.photo-card:hover {
+      border-color: rgba(70, 105, 140, 0.6);
+      box-shadow: 0 0 12px rgba(70, 105, 140, 0.3);
+      transform: translateY(-3px);
+      cursor: pointer;
+    }
+    article.photo-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+    }
+    .photo-info {
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .photo-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #d0d8e0;
+    }
+    .photo-date {
+      font-size: 0.85rem;
+      color: #809ab3;
+      margin-bottom: 0.7rem;
+    }
+    .photo-description {
+      font-size: 0.95rem;
+      color: #a3b0c4;
+      flex-grow: 1;
+      margin-bottom: 0.8rem;
+    }
+    .photo-specs {
+      font-size: 0.85rem;
+      color: #7a8ea8;
+      background: rgba(70, 105, 140, 0.1);
+      padding: 0.65rem;
+      border-radius: 4px;
+      border-left: 3px solid #7091bb;
+    }
+    #lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(10, 14, 27, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      cursor: zoom-out;
+    }
+    #lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      box-shadow: 0 0 15px #7091bb;
+      border-radius: 12px;
+      user-select: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#" class="logo">🌌 Astrophoto</a>
-            <ul>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#about">О проекте</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <nav id="menu">
+    <a href="#about" data-target="about">About Me</a>
+    <a href="#sun" data-target="sun">Sun</a>
+    <a href="#moon" data-target="moon">Moon</a>
+    <a href="#ss" data-target="ss">Solar System</a>
+    <a href="#galaxies" data-target="galaxies">Galaxies</a>
+    <a href="#comets" data-target="comets">Comets</a>
+    <a href="#other" data-target="other">Other Objects</a>
+  </nav>
+</header>
+<main>
+  <section class="tab-content" id="about">
+    <h1>About Me</h1>
+    <div class="about-container">
+      <p class="intro">Welcome!</p>
+      <p>This is blog/archive of my photos and stargazing observations.</p>
+      <p>At the moment I am starting my way in astronomy, I can say I am realizing my childhood dream.</p>
+      <p class="equipment-title">The equipment I'm currently using:</p>
+      <ul class="equipment-list">
+        <li>Sky-Watcher BK 1309 EQ2 130/900</li>
+        <li>Lenovo ThinkPad X230</li>
+        <li>ND96-0.9</li>
+        <li>ZWO UV/IR Cut (1,25")</li>
+        <li>EQ-2 RA motor drive</li>
+        <li>Super 25mm (36x), 10mm (90x), 5mm (257x)</li>
+        <li>Barlow lens x2, Barlow lens x1</li>
+        <li>Xiaomi Mi 10T Pro (photography)</li>
+        <li>Canon 450d</li>
+        <li>Jupiter37a</li>
+        <li>ZWO ASI 662MC</li>
+      </ul>
+    </div>
+  </section>
 
-    <main>
-        <!-- Герой секция -->
-        <section style="text-align: center; padding: 3rem 0;">
-            <h1>Astrophoto</h1>
-            <p class="subtitle">Путешествие в глубины космоса</p>
-            <p style="font-size: 1.1rem; color: #c0c0c0; max-width: 600px; margin: 0 auto;">
-                Портфолио астрофотографии - собрание снимков планет, звезд и небесных объектов
-            </p>
-        </section>
+  <section class="tab-content" id="sun">
+    <h1>Sun</h1>
+    <div class="gallery">
+      <article class="photo-card" tabindex="0" role="button" aria-label="Solar Flare photo">
+        <img src="https://via.placeholder.com/400x300?text=Solar+Flare" alt="Solar Flare" />
+        <div class="photo-info">
+          <h3 class="photo-title">Solar Flare</h3>
+          <time class="photo-date">1 January 2025</time>
+          <p class="photo-description">Powerful eruption on the sun's surface with H-alpha filter.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + H-alpha filter<br />
+            <strong>Exposure:</strong> 1/400 sec, ISO 200
+          </div>
+        </div>
+      </article>
+      <article class="photo-card" tabindex="0" role="button" aria-label="Sunspot photo">
+        <img src="https://via.placeholder.com/400x300?text=Sunspot" alt="Sunspot" />
+        <div class="photo-info">
+          <h3 class="photo-title">Sunspot</h3>
+          <time class="photo-date">5 February 2025</time>
+          <p class="photo-description">Dark spot on the solar surface with deep contrast.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + ND filter<br />
+            <strong>Exposure:</strong> 1/500 sec, ISO 100
+          </div>
+        </div>
+      </article>
+      <article class="photo-card" tabindex="0" role="button" aria-label="Solar corona photo">
+        <img src="https://via.placeholder.com/400x300?text=Corona" alt="Solar Corona" />
+        <div class="photo-info">
+          <h3 class="photo-title">Solar Corona</h3>
+          <time class="photo-date">15 May 2025</time>
+          <p class="photo-description">Achromatic solar corona during eclipse.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> Telescope with ND filter<br />
+            <strong>Exposure:</strong> 1/200 sec, ISO 150
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-        <!-- Галерея -->
-        <section id="gallery">
-            <h2>📷 Галерея</h2>
-            <div class="gallery">
-                <!-- Фото 1: Луна -->
-                <article class="photo-card">
-                    <img src="https://via.placeholder.com/400x300?text=Moon" alt="Луна в полнолуние">
-                    <div class="photo-info">
-                        <h3 class="photo-title">Луна в полнолуние</h3>
-                        <time class="photo-date">15 ноября 2025</time>
-                        <p class="photo-description">
-                            Отчетливый снимок полной луны с видимыми кратерами и горами. Идеальные условия для съемки.
-                        </p>
-                        <div class="photo-specs">
-                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2x + IR фильтр<br>
-                            <strong>Экспозиция:</strong> 1/1000 сек, ISO 100
-                        </div>
-                    </div>
-                </article>
+  <section class="tab-content" id="moon">
+    <h1>Moon</h1>
+    <div class="gallery">
+      <article class="photo-card" tabindex="0" role="button" aria-label="Full Moon photo">
+        <img src="https://via.placeholder.com/400x300?text=Full+Moon" alt="Full Moon" />
+        <div class="photo-info">
+          <h3 class="photo-title">Full Moon</h3>
+          <time class="photo-date">15 November 2025</time>
+          <p class="photo-description">Detailed shot of full moon with craters and mountains.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + Barlow 2x + IR filter<br />
+            <strong>Exposure:</strong> 1/1000 sec, ISO 100
+          </div>
+        </div>
+      </article>
+      <article class="photo-card" tabindex="0" role="button" aria-label="Moon Crater photo">
+        <img src="https://via.placeholder.com/400x300?text=Moon+Crater" alt="Moon Crater" />
+        <div class="photo-info">
+          <h3 class="photo-title">Moon Crater</h3>
+          <time class="photo-date">22 November 2025</time>
+          <p class="photo-description">Detailed shot of crater with interplay of light and shadow.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + Barlow 3x<br />
+            <strong>Exposure:</strong> 1/800 sec, ISO 120
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-                <!-- Фото 2: Юпитер -->
-                <article class="photo-card">
-                    <img src="https://via.placeholder.com/400x300?text=Jupiter" alt="Юпитер с полосами">
-                    <div class="photo-info">
-                        <h3 class="photo-title">Юпитер с полосами</h3>
-                        <time class="photo-date">10 ноября 2025</time>
-                        <p class="photo-description">
-                            Четкое изображение Юпитера со видимыми облачными полосами и Большим красным пятном.
-                        </p>
-                        <div class="photo-specs">
-                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 3x + T-adapter<br>
-                            <strong>Экспозиция:</strong> 1/500 сек, ISO 200
-                        </div>
-                    </div>
-                </article>
+  <section class="tab-content" id="ss">
+    <h1>Solar System</h1>
+    <div class="gallery">
+      <article class="photo-card" tabindex="0" role="button" aria-label="Jupiter photo">
+        <img src="https://raw.githubusercontent.com/escfrpls/astro/main/img/Jupiter_16.11.2025_FP_ZWO662.png" alt="Jupiter" />
+        <div class="photo-info">
+          <h3 class="photo-title">Jupiter</h3>
+          <time class="photo-date">16 November 2025</time>
+          <p class="photo-description">Clear image of Jupiter with visible bands and Great Red Spot.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + Barlow 3x + T-adapter<br />
+            <strong>Exposure:</strong> 1/500 sec, ISO 200
+          </div>
+        </div>
+      </article>
+      <article class="photo-card" tabindex="0" role="button" aria-label="Saturn photo">
+        <img src="https://via.placeholder.com/400x300?text=Saturn" alt="Saturn" />
+        <div class="photo-info">
+          <h3 class="photo-title">Saturn</h3>
+          <time class="photo-date">5 November 2025</time>
+          <p class="photo-description">Beautiful view of Saturn with rings and Titan moon.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + Barlow 2.5x<br />
+            <strong>Exposure:</strong> 1/800 sec, ISO 150
+          </div>
+        </div>
+      </article>
+      <article class="photo-card" tabindex="0" role="button" aria-label="Mars photo">
+        <img src="https://via.placeholder.com/400x300?text=Mars" alt="Mars" />
+        <div class="photo-info">
+          <h3 class="photo-title">Mars</h3>
+          <time class="photo-date">1 November 2025</time>
+          <p class="photo-description">Red planet in opposition with visible polar caps.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + Barlow 2x<br />
+            <strong>Exposure:</strong> 1/2000 sec, ISO 100
+          </div>
+        </div>
+      </article>
+      <article class="photo-card" tabindex="0" role="button" aria-label="Venus photo">
+        <img src="https://via.placeholder.com/400x300?text=Venus" alt="Venus" />
+        <div class="photo-info">
+          <h3 class="photo-title">Venus</h3>
+          <time class="photo-date">25 October 2025</time>
+          <p class="photo-description">Brightest night sky object with a crescent shape.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> ZWO ASI662 + Barlow 2x + ND filter<br />
+            <strong>Exposure:</strong> 1/5000 sec, ISO 100
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-                <!-- Фото 3: Сатурн -->
-                <article class="photo-card">
-                    <img src="https://via.placeholder.com/400x300?text=Saturn" alt="Сатурн с кольцами">
-                    <div class="photo-info">
-                        <h3 class="photo-title">Сатурн с кольцами</h3>
-                        <time class="photo-date">5 ноября 2025</time>
-                        <p class="photo-description">
-                            Великолепный вид Сатурна с четко видимыми кольцами и луной Титаном.
-                        </p>
-                        <div class="photo-specs">
-                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2.5x<br>
-                            <strong>Экспозиция:</strong> 1/800 сек, ISO 150
-                        </div>
-                    </div>
-                </article>
+  <section class="tab-content" id="galaxies">
+    <h1>Galaxies</h1>
+    <div class="gallery">
+      <article class="photo-card" tabindex="0" role="button" aria-label="Andromeda Galaxy photo">
+        <img src="https://via.placeholder.com/400x300?text=Andromeda" alt="Andromeda Galaxy" />
+        <div class="photo-info">
+          <h3 class="photo-title">Andromeda Galaxy</h3>
+          <time class="photo-date">12 March 2025</time>
+          <p class="photo-description">One of the closest galaxies to us. Magnificent night sky view.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> Telescope + camera<br />
+            <strong>Exposure:</strong> 60 sec, ISO 1600
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-                <!-- Фото 4: Марс -->
-                <article class="photo-card">
-                    <img src="https://via.placeholder.com/400x300?text=Mars" alt="Марс в оппозиции">
-                    <div class="photo-info">
-                        <h3 class="photo-title">Марс в оппозиции</h3>
-                        <time class="photo-date">1 ноября 2025</time>
-                        <p class="photo-description">
-                            Красная планета на пике видимости. Видны полярные шапки и темные области.
-                        </p>
-                        <div class="photo-specs">
-                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2x<br>
-                            <strong>Экспозиция:</strong> 1/2000 сек, ISO 100
-                        </div>
-                    </div>
-                </article>
+  <section class="tab-content" id="comets">
+    <h1>Comets</h1>
+    <div class="gallery">
+      <article class="photo-card" tabindex="0" role="button" aria-label="Comet NEOWISE photo">
+        <img src="https://via.placeholder.com/400x300?text=Comet+NEOWISE" alt="Comet NEOWISE" />
+        <div class="photo-info">
+          <h3 class="photo-title">Comet NEOWISE</h3>
+          <time class="photo-date">15 July 2025</time>
+          <p class="photo-description">Bright comet with tail seen in summer 2025.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> Telescope + camera<br />
+            <strong>Exposure:</strong> 20 sec, ISO 800
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-                <!-- Фото 5: Венера -->
-                <article class="photo-card">
-                    <img src="https://via.placeholder.com/400x300?text=Venus" alt="Венера в серпе">
-                    <div class="photo-info">
-                        <h3 class="photo-title">Венера в серпе</h3>
-                        <time class="photo-date">25 октября 2025</time>
-                        <p class="photo-description">
-                            Ярчайший объект ночного неба. Видна серповидная форма благодаря орбитальной позиции.
-                        </p>
-                        <div class="photo-specs">
-                            <strong>Оборудование:</strong> ZWO ASI662 + Barlow 2x + ND фильтр<br>
-                            <strong>Экспозиция:</strong> 1/5000 сек, ISO 100
-                        </div>
-                    </div>
-                </article>
+  <section class="tab-content" id="other">
+    <h1>Other Objects</h1>
+    <div class="gallery">
+      <article class="photo-card" tabindex="0" role="button" aria-label="Nebula photo">
+        <img src="https://via.placeholder.com/400x300?text=Nebula" alt="Nebula" />
+        <div class="photo-info">
+          <h3 class="photo-title">Nebula</h3>
+          <time class="photo-date">8 April 2025</time>
+          <p class="photo-description">Beautiful nebula cloud captured by telescope.</p>
+          <div class="photo-specs">
+            <strong>Equipment:</strong> Telescope + camera<br />
+            <strong>Exposure:</strong> 90 sec, ISO 1200
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
 
-                <!-- Фото 6: Звезды -->
-                <article class="photo-card">
-                    <img src="https://via.placeholder.com/400x300?text=Stars" alt="Звездное поле">
-                    <div class="photo-info">
-                        <h3 class="photo-title">Звездное поле</h3>
-                        <time class="photo-date">20 октября 2025</time>
-                        <p class="photo-description">
-                            Глубокое звездное поле с множеством звезд разных величин и цветов.
-                        </p>
-                        <div class="photo-specs">
-                            <strong>Оборудование:</strong> Телескоп + камера<br>
-                            <strong>Экспозиция:</strong> 30 сек, ISO 800
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
+<div id="lightbox-overlay" aria-hidden="true" role="dialog" tabindex="-1">
+  <img src="" alt="Enlarged photo" />
+</div>
 
-        <!-- О проекте -->
-        <section id="about">
-            <h2>🔭 О проекте</h2>
-            <div class="about">
-                <p>
-                    Этот проект представляет собой мое путешествие в мир астрофотографии. Я начал с простого оборудования и постепенно развивал свои навыки наблюдения и фотографии ночного неба.
-                </p>
-                <p>
-                    <strong>Оборудование:</strong> Мои основные инструменты включают камеру ZWO ASI662, различные Barlow линзы, T-адаптеры и фильтры. Это позволяет мне получать детальные снимки планет, луны и звездных полей.
-                </p>
-                <p>
-                    <strong>Цель проекта:</strong> Поделиться красотой нашей вселенной и вдохновить других людей интересоваться астрономией. Каждое фото - результат ночи наблюдений, обработки и постоянного совершенствования техники.
-                </p>
-                <p>
-                    <strong>Методология:</strong> Я использую стек режимов видеозаписи для захвата множества кадров, затем выбираю лучшие и обрабатываю их для максимальной четкости и деталей.
-                </p>
-            </div>
-        </section>
+<script>
+  function setActiveSection() {
+    const hash = window.location.hash || '#about';
+    const allSections = document.querySelectorAll('section.tab-content');
+    const links = document.querySelectorAll('nav a');
 
-        <!-- Контакты -->
-        <section id="contact">
-            <div class="contact">
-                <h2>📬 Свяжитесь со мной</h2>
-                <p>Заинтересованы в космосе? Хотите обсудить астрофотографию? Свяжитесь со мной!</p>
-                <div class="contact-links">
-                    <a href="mailto:your-email@example.com" class="contact-link">Email</a>
-                    <a href="https://github.com/escfrpls/astro" class="contact-link">GitHub</a>
-                    <a href="https://instagram.com" class="contact-link">Instagram</a>
-                </div>
-            </div>
-        </section>
-    </main>
+    allSections.forEach(section => {
+      if ('#' + section.id === hash) {
+        section.classList.add('active');
+      } else {
+        section.classList.remove('active');
+      }
+    });
 
-    <footer>
-        <p>&copy; 2025 Astrophoto. Все права защищены.</p>
-        <p>Сделано с 🌌 для любителей космоса</p>
-    </footer>
+    links.forEach(link => {
+      if (link.getAttribute('href') === hash) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  const lightboxOverlay = document.getElementById('lightbox-overlay');
+  const lightboxImage = lightboxOverlay.querySelector('img');
+
+  document.querySelectorAll('.photo-card img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightboxOverlay.style.display = 'flex';
+      lightboxOverlay.setAttribute('aria-hidden', 'false');
+      lightboxOverlay.focus();
+    });
+  });
+
+  lightboxOverlay.addEventListener('click', () => {
+    lightboxOverlay.style.display = 'none';
+    lightboxOverlay.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightboxOverlay.style.display === 'flex') {
+      lightboxOverlay.style.display = 'none';
+      lightboxOverlay.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+    }
+  });
+
+  window.addEventListener('hashchange', setActiveSection);
+  window.addEventListener('load', () => {
+    if (!window.location.hash) {
+      window.location.hash = '#about';
+    }
+    setActiveSection();
+  });
+</script>
 </body>
 </html>
