@@ -1,4 +1,3 @@
-/* === Базовые стили и сброс === */
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +6,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0a0a0a;
+    background-color: #050505;
     color: #ccc;
     line-height: 1.6;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* === Заголовок === */
 header {
     text-align: center;
     margin-bottom: 30px;
@@ -32,7 +30,7 @@ header h1 {
     color: #888;
 }
 
-/* === Навигация === */
+/* Навигация */
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -48,11 +46,11 @@ nav a {
     padding: 8px 16px;
     text-decoration: none;
     color: #aaa;
-    background-color: #1a1a1a;
+    background-color: #111;
     border: 1px solid #333;
     border-radius: 20px;
     font-size: 0.95rem;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 nav a:hover {
@@ -61,38 +59,23 @@ nav a:hover {
     border-color: #e0c080;
 }
 
-/* === Разделы (показываются/скрываются через :target) === */
+/* === Логика отображения разделов === */
 .target-section {
-    display: none; /* по умолчанию скрыты */
-    margin-bottom: 40px;
-}
-
-/* Показать раздел, если он является целью или если есть якорь #about */
-#about.target-section {
-    display: block; /* раздел "О себе" виден сразу */
-}
-
-/* Когда цель — id раздела, показать его */
-#sun:target,
-#moon:target,
-#solar:target,
-#galaxy:target,
-#comet:target,
-#other:target {
-    display: block;
-}
-
-/* Но при этом скрыть раздел "О себе", когда выбрана любая другая цель */
-#sun:target ~ #about,
-#moon:target ~ #about,
-#solar:target ~ #about,
-#galaxy:target ~ #about,
-#comet:target ~ #about,
-#other:target ~ #about {
     display: none;
 }
 
-/* === Галерея === */
+/* Показать раздел, если его ID в адресе ИЛИ если внутри открыта модалка */
+.target-section:target,
+.target-section:has(.modal:target) {
+    display: block;
+}
+
+/* Раздел «О себе» показывается по умолчанию, когда нет ни одного :target */
+#content:not(:has(:target)) #about {
+    display: block;
+}
+
+/* Галерея */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -108,45 +91,46 @@ nav a:hover {
     border: 1px solid #222;
     border-radius: 12px;
     overflow: hidden;
+    aspect-ratio: 4 / 3;          /* ← все карточки одинаковой пропорции */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .gallery-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.8);
 }
 
 .gallery-item img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover;            /* аккуратная обрезка */
     display: block;
 }
 
 .caption {
+    display: block;
     padding: 10px 14px;
     font-size: 0.85rem;
     color: #bbb;
-    background-color: #0a0a0a;
-    display: block;
+    background-color: #050505;
 }
 
-/* === Модальные окна (на чистом CSS) === */
+/* Модальные окна */
 .modal {
-    display: none; /* скрыто, пока не станет :target */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.92);
+    background-color: rgba(0, 0, 0, 0.93);
     z-index: 1000;
     align-items: center;
     justify-content: center;
 }
 
 .modal:target {
-    display: flex; /* показать, когда якорь указывает на это окно */
+    display: flex;
 }
 
 .modal-content {
@@ -169,7 +153,6 @@ nav a:hover {
     color: #ccc;
 }
 
-/* Кнопка закрытия */
 .close {
     position: absolute;
     top: -20px;
@@ -185,7 +168,7 @@ nav a:hover {
     opacity: 1;
 }
 
-/* === Подвал === */
+/* Подвал */
 footer {
     text-align: center;
     margin-top: 60px;
