@@ -1,33 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astrophoto</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Подключение шрифта Roboto с Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Astrophoto — исследование космоса</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
+<body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showAbout()">About Me</a></li>
-                <li><a href="#" onclick="showGallery('sun')">Sun</a></li>
-                <li><a href="#" onclick="showGallery('moon')">Moon</a></li>
-                <li><a href="#" onclick="showGallery('solar')">Solar System</a></li>
-                <li><a href="#" onclick="showGallery('galaxy')">Galaxies</a></li>
-                <li><a href="#" onclick="showGallery('comet')">Comets</a></li>
-                <li><a href="#" onclick="showGallery('other')">Other Objects</a></li>
-            </ul>
-        </nav>
+        <h1>🌌 Astrophoto</h1>
+        <p class="subtitle">Мой путь в астрономии</p>
     </header>
-    <div class="gallery" id="gallery"></div>
-    <div class="modal" id="modal">
-        <img id="modal-img" src="" alt="">
-        <p id="modal-caption"></p>
+
+    <!-- Навигация с якорями -->
+    <nav>
+        <ul>
+            <li><a href="#about">О себе</a></li>
+            <li><a href="#sun">Солнце</a></li>
+            <li><a href="#moon">Луна</a></li>
+            <li><a href="#solar">Солнечная система</a></li>
+            <li><a href="#galaxy">Галактики</a></li>
+            <li><a href="#comet">Кометы</a></li>
+            <li><a href="#other">Другие объекты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Контент разделов -->
+    <main>
+        <!-- О себе -->
+        <section id="about" class="target-section">
+            <h2>Добро пожаловать!</h2>
+            <div class="about-text">
+                <p>Это блог/архив моих астрофотографий и наблюдений за звёздами.</p>
+                <p>На данный момент я начинаю свой путь в астрономии и могу сказать, что воплощаю детскую мечту в реальность.</p>
+                <h3>Моё оборудование:</h3>
+                <ul>
+                    <li>Телескоп: Sky-Watcher BK 1309 EQ2 130/900</li>
+                    <li>Монтировка: EQ-2 с RA мотором</li>
+                    <li>Камеры: Xiaomi Mi 10T Pro, Canon 450d, ZWO ASI 662MC</li>
+                    <li>Линзы: Super 25мм, 10мм, 5мм, Barlow x2, Jupiter 37A</li>
+                    <li>Фильтры: ZWO UV/IR Cut (1,25"), ND96-0.9</li>
+                    <li>Ноутбук: Lenovo ThinkPad X230</li>
+                </ul>
+                <p><a href="https://github.com/escfrpls/astro" target="_blank">Исходный код на GitHub</a></p>
+            </div>
+        </section>
+
+        <!-- Солнце -->
+        <section id="sun" class="target-section">
+            <h2>☀️ Солнце</h2>
+            <div class="gallery">
+                <a href="#sun-modal-1" class="gallery-item">
+                    <img src="img/sun_19.10.2024.png" alt="Первое солнце, 19.10.2024">
+                    <span class="caption">Первое Солнце, 19.10.2024 (Xiaomi Mi 10T Pro, Super 25mm)</span>
+                </a>
+                <a href="#sun-modal-2" class="gallery-item">
+                    <img src="img/sun_09.08.2025.png" alt="Солнце, 09.08.2025">
+                    <span class="caption">Солнце, 09.08.2025 (Xiaomi Mi 10T Pro, Super 25mm)</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Луна -->
+        <section id="moon" class="target-section">
+            <h2>🌙 Луна</h2>
+            <div class="gallery">
+                <a href="#moon-modal-1" class="gallery-item">
+                    <img src="img/moon_first_photo_28.06.2024.png" alt="Луна, первое фото, 28.06.2024">
+                    <span class="caption">Первое фото Луны, 28.06.2024 (Xiaomi Mi 10T Pro, Super 25mm)</span>
+                </a>
+                <a href="#moon-modal-2" class="gallery-item">
+                    <img src="img/moon_20.07.2024.png" alt="Луна, 20.07.2024">
+                    <span class="caption">Луна, 20.07.2024 (Xiaomi Mi 10T Pro, Super 25mm, ND96-0.9)</span>
+                </a>
+                <a href="#moon-modal-3" class="gallery-item">
+                    <img src="img/Supermoon_19.10.2024.png" alt="Суперлуна, 18.10.2024">
+                    <span class="caption">Суперлуние, 18.10.2024 (Xiaomi Mi 10T Pro, Super 25mm, ND96-0.9)</span>
+                </a>
+                <a href="#moon-modal-4" class="gallery-item">
+                    <img src="img/red_moon-09.09.2025.png" alt="Красная луна, 09.09.2025">
+                    <span class="caption">Красная Луна, 09.09.2025 (Xiaomi Mi 10T Pro, Super 10mm)</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Солнечная система -->
+        <section id="solar" class="target-section">
+            <h2>🪐 Солнечная система</h2>
+            <div class="gallery">
+                <a href="#solar-modal-1" class="gallery-item">
+                    <img src="img/Saturn_first_photo_27.06.2024.png" alt="Сатурн, первое фото">
+                    <span class="caption">Сатурн, 27.06.2024 (Xiaomi Mi 10T Pro, Super 10mm + Barlow x2)</span>
+                </a>
+                <a href="#solar-modal-2" class="gallery-item">
+                    <img src="img/Jupiter_16.11.2025_FP_ZWO662.png" alt="Юпитер, первое фото">
+                    <span class="caption">Юпитер, 16.11.2025 (ZWO 662 Color + ZWOVideoStack)</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Галактики -->
+        <section id="galaxy" class="target-section">
+            <h2>🌠 Галактики</h2>
+            <div class="gallery">
+                <a href="#galaxy-modal-1" class="gallery-item">
+                    <img src="img/galaxy1.jpg" alt="Галактика 1">
+                    <span class="caption">Галактика 1</span>
+                </a>
+                <a href="#galaxy-modal-2" class="gallery-item">
+                    <img src="img/galaxy2.jpg" alt="Галактика 2">
+                    <span class="caption">Галактика 2</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Кометы -->
+        <section id="comet" class="target-section">
+            <h2>☄️ Кометы</h2>
+            <div class="gallery">
+                <a href="#comet-modal-1" class="gallery-item">
+                    <img src="img/comet1.jpg" alt="Комета 1">
+                    <span class="caption">Комета 1</span>
+                </a>
+                <a href="#comet-modal-2" class="gallery-item">
+                    <img src="img/comet2.jpg" alt="Комета 2">
+                    <span class="caption">Комета 2</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Другие объекты -->
+        <section id="other" class="target-section">
+            <h2>🌍 Другие объекты</h2>
+            <div class="gallery">
+                <a href="#other-modal-1" class="gallery-item">
+                    <img src="img/Noctilucent cloud 03.07.2025.png" alt="Серебристые облака">
+                    <span class="caption">Серебристые облака, 03.07.2025 (Xiaomi Mi 10T Pro)</span>
+                </a>
+                <a href="#other-modal-2" class="gallery-item">
+                    <img src="img/Pleiades_first_photo_08.09.2025.png" alt="Плеяды">
+                    <span class="caption">Плеяды, 08.09.2025 (Xiaomi Mi 10T Pro + Super 10mm)</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальные окна (появляются по :target) -->
+    <!-- Солнце -->
+    <div id="sun-modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#sun" class="close">&times;</a>
+            <img src="img/sun_19.10.2024.png" alt="Первое солнце">
+            <p>Первое Солнце, 19.10.2024 (Xiaomi Mi 10T Pro, Super 25mm)</p>
+        </div>
     </div>
-    <div class="about-container" id="about-container"></div>
-    <script src="script.js"></script>
+    <div id="sun-modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#sun" class="close">&times;</a>
+            <img src="img/sun_09.08.2025.png" alt="Солнце, 09.08.2025">
+            <p>Солнце, 09.08.2025 (Xiaomi Mi 10T Pro, Super 25mm)</p>
+        </div>
+    </div>
+
+    <!-- Луна -->
+    <div id="moon-modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#moon" class="close">&times;</a>
+            <img src="img/moon_first_photo_28.06.2024.png" alt="Первое фото Луны">
+            <p>Первое фото Луны, 28.06.2024 (Xiaomi Mi 10T Pro, Super 25mm)</p>
+        </div>
+    </div>
+    <div id="moon-modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#moon" class="close">&times;</a>
+            <img src="img/moon_20.07.2024.png" alt="Луна, 20.07.2024">
+            <p>Луна, 20.07.2024 (Xiaomi Mi 10T Pro, Super 25mm, ND96-0.9)</p>
+        </div>
+    </div>
+    <div id="moon-modal-3" class="modal">
+        <div class="modal-content">
+            <a href="#moon" class="close">&times;</a>
+            <img src="img/Supermoon_19.10.2024.png" alt="Суперлуна">
+            <p>Суперлуние, 18.10.2024 (Xiaomi Mi 10T Pro, Super 25mm, ND96-0.9)</p>
+        </div>
+    </div>
+    <div id="moon-modal-4" class="modal">
+        <div class="modal-content">
+            <a href="#moon" class="close">&times;</a>
+            <img src="img/red_moon-09.09.2025.png" alt="Красная луна">
+            <p>Красная Луна, 09.09.2025 (Xiaomi Mi 10T Pro, Super 10mm)</p>
+        </div>
+    </div>
+
+    <!-- Сатурн -->
+    <div id="solar-modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#solar" class="close">&times;</a>
+            <img src="img/Saturn_first_photo_27.06.2024.png" alt="Сатурн">
+            <p>Сатурн, 27.06.2024 (Xiaomi Mi 10T Pro, Super 10mm + Barlow x2)</p>
+        </div>
+    </div>
+    <!-- Юпитер -->
+    <div id="solar-modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#solar" class="close">&times;</a>
+            <img src="img/Jupiter_16.11.2025_FP_ZWO662.png" alt="Юпитер">
+            <p>Юпитер, 16.11.2025 (ZWO 662 Color + ZWOVideoStack)</p>
+        </div>
+    </div>
+
+    <!-- Галактики -->
+    <div id="galaxy-modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#galaxy" class="close">&times;</a>
+            <img src="img/galaxy1.jpg" alt="Галактика 1">
+            <p>Галактика 1</p>
+        </div>
+    </div>
+    <div id="galaxy-modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#galaxy" class="close">&times;</a>
+            <img src="img/galaxy2.jpg" alt="Галактика 2">
+            <p>Галактика 2</p>
+        </div>
+    </div>
+
+    <!-- Кометы -->
+    <div id="comet-modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#comet" class="close">&times;</a>
+            <img src="img/comet1.jpg" alt="Комета 1">
+            <p>Комета 1</p>
+        </div>
+    </div>
+    <div id="comet-modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#comet" class="close">&times;</a>
+            <img src="img/comet2.jpg" alt="Комета 2">
+            <p>Комета 2</p>
+        </div>
+    </div>
+
+    <!-- Другие объекты -->
+    <div id="other-modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#other" class="close">&times;</a>
+            <img src="img/Noctilucent cloud 03.07.2025.png" alt="Серебристые облака">
+            <p>Серебристые облака, 03.07.2025 (Xiaomi Mi 10T Pro)</p>
+        </div>
+    </div>
+    <div id="other-modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#other" class="close">&times;</a>
+            <img src="img/Pleiades_first_photo_08.09.2025.png" alt="Плеяды">
+            <p>Плеяды, 08.09.2025 (Xiaomi Mi 10T Pro + Super 10mm)</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024-2025 Astrophoto · <a href="https://github.com/escfrpls/astro">GitHub</a></p>
+    </footer>
 </body>
 </html>
