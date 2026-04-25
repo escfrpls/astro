@@ -12,222 +12,35 @@
         <p class="subtitle">Мой путь в астрономии</p>
     </header>
 
+    <!-- Радио-кнопки для вкладок (скрыты) -->
+    <input type="radio" name="tabs" id="tab-about" checked>
+    <input type="radio" name="tabs" id="tab-sun">
+    <input type="radio" name="tabs" id="tab-moon">
+    <input type="radio" name="tabs" id="tab-solar">
+    <input type="radio" name="tabs" id="tab-galaxy">
+    <input type="radio" name="tabs" id="tab-comet">
+    <input type="radio" name="tabs" id="tab-other">
+
+    <!-- Навигация (метки для радио-кнопок) -->
     <nav>
-        <ul>
-            <li><a href="#about">О себе</a></li>
-            <li><a href="#sun">Солнце</a></li>
-            <li><a href="#moon">Луна</a></li>
-            <li><a href="#solar">Солнечная система</a></li>
-            <li><a href="#galaxy">Галактики</a></li>
-            <li><a href="#comet">Кометы</a></li>
-            <li><a href="#other">Другие объекты</a></li>
-        </ul>
+        <label for="tab-about">О себе</label>
+        <label for="tab-sun">Солнце</label>
+        <label for="tab-moon">Луна</label>
+        <label for="tab-solar">Солнечная система</label>
+        <label for="tab-galaxy">Галактики</label>
+        <label for="tab-comet">Кометы</label>
+        <label for="tab-other">Другие объекты</label>
     </nav>
 
+    <!-- Контент -->
     <main id="content">
-        <!-- Модальные окна и секция СОЛНЦЕ -->
-        <div id="sun-modal-1" class="modal">
-            <div class="modal-content">
-                <a href="#sun" class="close">&times;</a>
-                <img src="img/sun_19.10.2024.png" alt="Первое солнце">
-                <p>Первое Солнце, 19.10.2024 (Xiaomi Mi 10T Pro, Super 25mm)</p>
-            </div>
-        </div>
-        <div id="sun-modal-2" class="modal">
-            <div class="modal-content">
-                <a href="#sun" class="close">&times;</a>
-                <img src="img/sun_09.08.2025.png" alt="Солнце, 09.08.2025">
-                <p>Солнце, 09.08.2025 (Xiaomi Mi 10T Pro, Super 25mm)</p>
-            </div>
-        </div>
-        <section id="sun" class="gallery-section">
-            <h2>☀️ Солнце</h2>
-            <div class="gallery">
-                <a href="#sun-modal-1" class="gallery-item">
-                    <img src="img/sun_19.10.2024.png" alt="Первое солнце">
-                    <span class="caption">Первое Солнце, 19.10.2024</span>
-                </a>
-                <a href="#sun-modal-2" class="gallery-item">
-                    <img src="img/sun_09.08.2025.png" alt="Солнце, 09.08.2025">
-                    <span class="caption">Солнце, 09.08.2025</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Модальные окна и секция ЛУНА -->
-        <div id="moon-modal-1" class="modal">
-            <div class="modal-content">
-                <a href="#moon" class="close">&times;</a>
-                <img src="img/moon_first_photo_28.06.2024.png" alt="Первое фото Луны">
-                <p>Первое фото Луны, 28.06.2024</p>
-            </div>
-        </div>
-        <div id="moon-modal-2" class="modal">
-            <div class="modal-content">
-                <a href="#moon" class="close">&times;</a>
-                <img src="img/moon_20.07.2024.png" alt="Луна, 20.07.2024">
-                <p>Луна, 20.07.2024</p>
-            </div>
-        </div>
-        <div id="moon-modal-3" class="modal">
-            <div class="modal-content">
-                <a href="#moon" class="close">&times;</a>
-                <img src="img/Supermoon_19.10.2024.png" alt="Суперлуна">
-                <p>Суперлуние, 18.10.2024</p>
-            </div>
-        </div>
-        <div id="moon-modal-4" class="modal">
-            <div class="modal-content">
-                <a href="#moon" class="close">&times;</a>
-                <img src="img/red_moon-09.09.2025.png" alt="Красная луна">
-                <p>Красная Луна, 09.09.2025</p>
-            </div>
-        </div>
-        <section id="moon" class="gallery-section">
-            <h2>🌙 Луна</h2>
-            <div class="gallery">
-                <a href="#moon-modal-1" class="gallery-item">
-                    <img src="img/moon_first_photo_28.06.2024.png" alt="Луна, первое фото">
-                    <span class="caption">Первое фото Луны, 28.06.2024</span>
-                </a>
-                <a href="#moon-modal-2" class="gallery-item">
-                    <img src="img/moon_20.07.2024.png" alt="Луна, 20.07.2024">
-                    <span class="caption">Луна, 20.07.2024</span>
-                </a>
-                <a href="#moon-modal-3" class="gallery-item">
-                    <img src="img/Supermoon_19.10.2024.png" alt="Суперлуна">
-                    <span class="caption">Суперлуние, 18.10.2024</span>
-                </a>
-                <a href="#moon-modal-4" class="gallery-item">
-                    <img src="img/red_moon-09.09.2025.png" alt="Красная луна">
-                    <span class="caption">Красная Луна, 09.09.2025</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Модальные окна и секция СОЛНЕЧНАЯ СИСТЕМА -->
-        <div id="solar-modal-1" class="modal">
-            <div class="modal-content">
-                <a href="#solar" class="close">&times;</a>
-                <img src="img/Saturn_first_photo_27.06.2024.png" alt="Сатурн">
-                <p>Сатурн, 27.06.2024</p>
-            </div>
-        </div>
-        <div id="solar-modal-2" class="modal">
-            <div class="modal-content">
-                <a href="#solar" class="close">&times;</a>
-                <img src="img/Jupiter_16.11.2025_FP_ZWO662.png" alt="Юпитер">
-                <p>Юпитер, 16.11.2025</p>
-            </div>
-        </div>
-        <section id="solar" class="gallery-section">
-            <h2>🪐 Солнечная система</h2>
-            <div class="gallery">
-                <a href="#solar-modal-1" class="gallery-item">
-                    <img src="img/Saturn_first_photo_27.06.2024.png" alt="Сатурн">
-                    <span class="caption">Сатурн, 27.06.2024</span>
-                </a>
-                <a href="#solar-modal-2" class="gallery-item">
-                    <img src="img/Jupiter_16.11.2025_FP_ZWO662.png" alt="Юпитер">
-                    <span class="caption">Юпитер, 16.11.2025</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Модальные окна и секция ГАЛАКТИКИ -->
-        <div id="galaxy-modal-1" class="modal">
-            <div class="modal-content">
-                <a href="#galaxy" class="close">&times;</a>
-                <img src="img/galaxy1.jpg" alt="Галактика 1">
-                <p>Галактика 1</p>
-            </div>
-        </div>
-        <div id="galaxy-modal-2" class="modal">
-            <div class="modal-content">
-                <a href="#galaxy" class="close">&times;</a>
-                <img src="img/galaxy2.jpg" alt="Галактика 2">
-                <p>Галактика 2</p>
-            </div>
-        </div>
-        <section id="galaxy" class="gallery-section">
-            <h2>🌠 Галактики</h2>
-            <div class="gallery">
-                <a href="#galaxy-modal-1" class="gallery-item">
-                    <img src="img/galaxy1.jpg" alt="Галактика 1">
-                    <span class="caption">Галактика 1</span>
-                </a>
-                <a href="#galaxy-modal-2" class="gallery-item">
-                    <img src="img/galaxy2.jpg" alt="Галактика 2">
-                    <span class="caption">Галактика 2</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Модальные окна и секция КОМЕТЫ -->
-        <div id="comet-modal-1" class="modal">
-            <div class="modal-content">
-                <a href="#comet" class="close">&times;</a>
-                <img src="img/comet1.jpg" alt="Комета 1">
-                <p>Комета 1</p>
-            </div>
-        </div>
-        <div id="comet-modal-2" class="modal">
-            <div class="modal-content">
-                <a href="#comet" class="close">&times;</a>
-                <img src="img/comet2.jpg" alt="Комета 2">
-                <p>Комета 2</p>
-            </div>
-        </div>
-        <section id="comet" class="gallery-section">
-            <h2>☄️ Кометы</h2>
-            <div class="gallery">
-                <a href="#comet-modal-1" class="gallery-item">
-                    <img src="img/comet1.jpg" alt="Комета 1">
-                    <span class="caption">Комета 1</span>
-                </a>
-                <a href="#comet-modal-2" class="gallery-item">
-                    <img src="img/comet2.jpg" alt="Комета 2">
-                    <span class="caption">Комета 2</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Модальные окна и секция ДРУГИЕ -->
-        <div id="other-modal-1" class="modal">
-            <div class="modal-content">
-                <a href="#other" class="close">&times;</a>
-                <img src="img/Noctilucent cloud 03.07.2025.png" alt="Серебристые облака">
-                <p>Серебристые облака, 03.07.2025</p>
-            </div>
-        </div>
-        <div id="other-modal-2" class="modal">
-            <div class="modal-content">
-                <a href="#other" class="close">&times;</a>
-                <img src="img/Pleiades_first_photo_08.09.2025.png" alt="Плеяды">
-                <p>Плеяды, 08.09.2025</p>
-            </div>
-        </div>
-        <section id="other" class="gallery-section">
-            <h2>🌍 Другие объекты</h2>
-            <div class="gallery">
-                <a href="#other-modal-1" class="gallery-item">
-                    <img src="img/Noctilucent cloud 03.07.2025.png" alt="Серебристые облака">
-                    <span class="caption">Серебристые облака, 03.07.2025</span>
-                </a>
-                <a href="#other-modal-2" class="gallery-item">
-                    <img src="img/Pleiades_first_photo_08.09.2025.png" alt="Плеяды">
-                    <span class="caption">Плеяды, 08.09.2025</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Секция О СЕБЕ (в конце) -->
-        <section id="about" class="about-section">
+        <!-- О себе -->
+        <section id="about" class="tab-content">
             <h2>Добро пожаловать!</h2>
             <div class="about-text">
                 <p>Это блог/архив моих астрофотографий и наблюдений за звёздами.</p>
-                <p>На данный момент я начинаю свой путь в астрономии и могу сказать, что воплощаю детскую мечту в реальность.</p>
-                <h3>Моё оборудование:</h3>
+                <p>Я воплощаю детскую мечту в реальность.</p>
+                <h3>Моё оборудование</h3>
                 <ul>
                     <li>Телескоп: Sky-Watcher BK 1309 EQ2 130/900</li>
                     <li>Монтировка: EQ-2 с RA мотором</li>
@@ -239,7 +52,210 @@
                 <p><a href="https://github.com/escfrpls/astro" target="_blank">Исходный код на GitHub</a></p>
             </div>
         </section>
+
+        <!-- Солнце -->
+        <section id="sun" class="tab-content">
+            <h2>☀️ Солнце</h2>
+            <div class="gallery">
+                <a href="#sun-1" class="card">
+                    <img src="img/sun_19.10.2024.png" alt="Солнце">
+                    <span>Первое Солнце, 19.10.2024</span>
+                </a>
+                <a href="#sun-2" class="card">
+                    <img src="img/sun_09.08.2025.png" alt="Солнце">
+                    <span>Солнце, 09.08.2025</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Луна -->
+        <section id="moon" class="tab-content">
+            <h2>🌙 Луна</h2>
+            <div class="gallery">
+                <a href="#moon-1" class="card">
+                    <img src="img/moon_first_photo_28.06.2024.png" alt="Луна">
+                    <span>Первое фото, 28.06.2024</span>
+                </a>
+                <a href="#moon-2" class="card">
+                    <img src="img/moon_20.07.2024.png" alt="Луна">
+                    <span>Луна, 20.07.2024</span>
+                </a>
+                <a href="#moon-3" class="card">
+                    <img src="img/Supermoon_19.10.2024.png" alt="Суперлуна">
+                    <span>Суперлуние, 18.10.2024</span>
+                </a>
+                <a href="#moon-4" class="card">
+                    <img src="img/red_moon-09.09.2025.png" alt="Красная луна">
+                    <span>Красная Луна, 09.09.2025</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Солнечная система -->
+        <section id="solar" class="tab-content">
+            <h2>🪐 Солнечная система</h2>
+            <div class="gallery">
+                <a href="#solar-1" class="card">
+                    <img src="img/Saturn_first_photo_27.06.2024.png" alt="Сатурн">
+                    <span>Сатурн, 27.06.2024</span>
+                </a>
+                <a href="#solar-2" class="card">
+                    <img src="img/Jupiter_16.11.2025_FP_ZWO662.png" alt="Юпитер">
+                    <span>Юпитер, 16.11.2025</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Галактики -->
+        <section id="galaxy" class="tab-content">
+            <h2>🌠 Галактики</h2>
+            <div class="gallery">
+                <a href="#gal-1" class="card">
+                    <img src="img/galaxy1.jpg" alt="Галактика">
+                    <span>Галактика 1</span>
+                </a>
+                <a href="#gal-2" class="card">
+                    <img src="img/galaxy2.jpg" alt="Галактика">
+                    <span>Галактика 2</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Кометы -->
+        <section id="comet" class="tab-content">
+            <h2>☄️ Кометы</h2>
+            <div class="gallery">
+                <a href="#com-1" class="card">
+                    <img src="img/comet1.jpg" alt="Комета">
+                    <span>Комета 1</span>
+                </a>
+                <a href="#com-2" class="card">
+                    <img src="img/comet2.jpg" alt="Комета">
+                    <span>Комета 2</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Другие объекты -->
+        <section id="other" class="tab-content">
+            <h2>🌍 Другие объекты</h2>
+            <div class="gallery">
+                <a href="#other-1" class="card">
+                    <img src="img/Noctilucent cloud 03.07.2025.png" alt="Серебристые облака">
+                    <span>Серебристые облака, 03.07.2025</span>
+                </a>
+                <a href="#other-2" class="card">
+                    <img src="img/Pleiades_first_photo_08.09.2025.png" alt="Плеяды">
+                    <span>Плеяды, 08.09.2025</span>
+                </a>
+            </div>
+        </section>
     </main>
+
+    <!-- Модальные окна для каждого фото -->
+    <div id="sun-1" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/sun_19.10.2024.png" alt="">
+            <p>Первое Солнце, 19.10.2024</p>
+        </div>
+    </div>
+    <div id="sun-2" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/sun_09.08.2025.png" alt="">
+            <p>Солнце, 09.08.2025</p>
+        </div>
+    </div>
+
+    <div id="moon-1" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/moon_first_photo_28.06.2024.png" alt="">
+            <p>Первое фото Луны, 28.06.2024</p>
+        </div>
+    </div>
+    <div id="moon-2" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/moon_20.07.2024.png" alt="">
+            <p>Луна, 20.07.2024</p>
+        </div>
+    </div>
+    <div id="moon-3" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/Supermoon_19.10.2024.png" alt="">
+            <p>Суперлуние, 18.10.2024</p>
+        </div>
+    </div>
+    <div id="moon-4" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/red_moon-09.09.2025.png" alt="">
+            <p>Красная Луна, 09.09.2025</p>
+        </div>
+    </div>
+
+    <div id="solar-1" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/Saturn_first_photo_27.06.2024.png" alt="">
+            <p>Сатурн, 27.06.2024</p>
+        </div>
+    </div>
+    <div id="solar-2" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/Jupiter_16.11.2025_FP_ZWO662.png" alt="">
+            <p>Юпитер, 16.11.2025</p>
+        </div>
+    </div>
+
+    <div id="gal-1" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/galaxy1.jpg" alt="">
+            <p>Галактика 1</p>
+        </div>
+    </div>
+    <div id="gal-2" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/galaxy2.jpg" alt="">
+            <p>Галактика 2</p>
+        </div>
+    </div>
+
+    <div id="com-1" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/comet1.jpg" alt="">
+            <p>Комета 1</p>
+        </div>
+    </div>
+    <div id="com-2" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/comet2.jpg" alt="">
+            <p>Комета 2</p>
+        </div>
+    </div>
+
+    <div id="other-1" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/Noctilucent cloud 03.07.2025.png" alt="">
+            <p>Серебристые облака, 03.07.2025</p>
+        </div>
+    </div>
+    <div id="other-2" class="modal">
+        <div class="modal-inner">
+            <a href="#" class="close">&times;</a>
+            <img src="img/Pleiades_first_photo_08.09.2025.png" alt="">
+            <p>Плеяды, 08.09.2025</p>
+        </div>
+    </div>
 
     <footer>
         <p>© 2024-2025 Astrophoto · <a href="https://github.com/escfrpls/astro">GitHub</a></p>
