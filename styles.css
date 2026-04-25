@@ -1,88 +1,200 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    line-height: 1.6;
-    background-color: #222; /* Темный фон для основного контента */
-    color: #ddd; /* Цвет текста для темной темы */
+/* === Базовые стили и сброс === */
+* {
     margin: 0;
-}
-
-/* Стили для верхнего блока с заголовком и меню */
-header {
-    background-color: #555; /* Темный фон для верхнего блока */
-    color: #ddd;
-    padding: 10px; /* Уменьшаем внутренний отступ */
-    margin-bottom: 20px;
-    display: flex; /* Добавлено для использования flexbox */
-    justify-content: space-between; /* Распределение элементов по краям блока */
-    align-items: center; /* Выравнивание элементов по вертикали */
-}
-
-/* Меню навигации */
-header nav {
-    margin-bottom: 10px;
-}
-
-header nav ul {
-    list-style-type: none;
     padding: 0;
-    margin: 0;
-    display: flex; /* Расположение пунктов меню в одну линию */
-    justify-content: center; /* Выравнивание по центру */
+    box-sizing: border-box;
 }
 
-header nav ul li {
-    margin-right: 10px; /* Уменьшаем отступ между пунктами меню */
-}
-
-header nav ul li a {
-    color: #ddd;
-    text-decoration: none;
-    padding: 8px; /* Уменьшаем внутренний отступ */
-    transition: background-color 0.3s ease;
-}
-
-/* Подсветка при наведении для темной темы */
-header nav ul li a:hover {
-    background-color: #777;
-}
-
-/* Галерея миниатюр */
-.gallery {
-    display: flex; /* Расположение миниатюр в ряд */
-    flex-wrap: wrap; /* Перенос миниатюр на новую строку при необходимости */
-    justify-content: center; /* Выравнивание миниатюр по центру */
-    gap: 10px; /* Отступ между миниатюрами */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0a0a;
+    color: #ccc;
+    line-height: 1.6;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-.gallery img {
-    width: 150px; /* Ширина миниатюры */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    cursor: pointer;
-    transition: transform 0.2s ease;
+/* === Заголовок === */
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.gallery img:hover {
-    transform: scale(1.1); /* Увеличение миниатюры при наведении */
+header h1 {
+    font-size: 2.8rem;
+    color: #e0c080;
+    margin-bottom: 0.2em;
 }
 
-/* Модальное окно для увеличенных изображений */
+.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* === Навигация === */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #aaa;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #e0c080;
+}
+
+/* === Разделы (показываются/скрываются через :target) === */
+.target-section {
+    display: none; /* по умолчанию скрыты */
+    margin-bottom: 40px;
+}
+
+/* Показать раздел, если он является целью или если есть якорь #about */
+#about.target-section {
+    display: block; /* раздел "О себе" виден сразу */
+}
+
+/* Когда цель — id раздела, показать его */
+#sun:target,
+#moon:target,
+#solar:target,
+#galaxy:target,
+#comet:target,
+#other:target {
+    display: block;
+}
+
+/* Но при этом скрыть раздел "О себе", когда выбрана любая другая цель */
+#sun:target ~ #about,
+#moon:target ~ #about,
+#solar:target ~ #about,
+#galaxy:target ~ #about,
+#comet:target ~ #about,
+#other:target ~ #about {
+    display: none;
+}
+
+/* === Галерея === */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    display: block;
+    text-decoration: none;
+    color: #ddd;
+    background-color: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    color: #bbb;
+    background-color: #0a0a0a;
+    display: block;
+}
+
+/* === Модальные окна (на чистом CSS) === */
 .modal {
-    display: none; /* Скрытое модальное окно по умолчанию */
+    display: none; /* скрыто, пока не станет :target */
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
-    z-index: 999;
-    padding: 20px;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
-    justify-content: flex-start; /* Выравнивание по левому краю */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
 }
 
-.modal img {
-    max-width: 90%; /* Максимальная ширина изображения в модальном окне */
-    max-height: 90%; /* Максимальная высота изображения в модальном окне */
-   
+.modal:target {
+    display: flex; /* показать, когда якорь указывает на это окно */
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.modal-content p {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Кнопка закрытия */
+.close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+/* === Подвал === */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px 0;
+    color: #555;
+    border-top: 1px solid #222;
+}
+
+footer a {
+    color: #e0c080;
+    text-decoration: none;
+}
