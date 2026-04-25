@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #050505;
-    color: #ccc;
+    background: #0a0a14;
+    color: #ddd;
     line-height: 1.6;
     max-width: 1200px;
     margin: 0 auto;
@@ -18,214 +18,184 @@ header {
     text-align: center;
     margin-bottom: 30px;
 }
-
 header h1 {
-    font-size: 2.8rem;
-    color: #e0c080;
-    margin-bottom: 0.2em;
+    font-size: 3rem;
+    color: #f0d080;
+    letter-spacing: 2px;
 }
-
 .subtitle {
-    font-size: 1.2rem;
     color: #888;
+    font-size: 1.2rem;
 }
 
-/* Навигация */
-nav ul {
+/* Скрываем радио-кнопки */
+input[type="radio"][name="tabs"] {
+    display: none;
+}
+
+/* Навигация — метки */
+nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    list-style: none;
     gap: 10px;
     margin-bottom: 40px;
-    padding: 0;
 }
-
-nav a {
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
+nav label {
+    padding: 10px 20px;
+    background: #131320;
+    border: 1px solid #2a2a40;
+    border-radius: 30px;
     color: #aaa;
-    background-color: #111;
-    border: 1px solid #333;
-    border-radius: 20px;
+    cursor: pointer;
     font-size: 0.95rem;
-    transition: all 0.2s;
+    transition: 0.3s;
 }
-
-nav a:hover {
-    background-color: #333;
+nav label:hover {
+    background: #252540;
     color: #fff;
-    border-color: #e0c080;
+    border-color: #f0d080;
 }
 
-/* Все секции скрыты по умолчанию */
-.gallery-section,
-.about-section {
+/* Подсветка активной вкладки через комбинатор ~ */
+#tab-about:checked ~ nav label[for="tab-about"],
+#tab-sun:checked ~ nav label[for="tab-sun"],
+#tab-moon:checked ~ nav label[for="tab-moon"],
+#tab-solar:checked ~ nav label[for="tab-solar"],
+#tab-galaxy:checked ~ nav label[for="tab-galaxy"],
+#tab-comet:checked ~ nav label[for="tab-comet"],
+#tab-other:checked ~ nav label[for="tab-other"] {
+    background: #f0d080;
+    color: #0a0a14;
+    border-color: #f0d080;
+    font-weight: bold;
+}
+
+/* Содержимое вкладок */
+.tab-content {
     display: none;
 }
 
-/* СЕКЦИЯ "О СЕБЕ" видна, когда нет никакого :target */
-#about {
+/* Показываем нужную вкладку по выбору радио */
+#tab-about:checked ~ #content #about,
+#tab-sun:checked ~ #content #sun,
+#tab-moon:checked ~ #content #moon,
+#tab-solar:checked ~ #content #solar,
+#tab-galaxy:checked ~ #content #galaxy,
+#tab-comet:checked ~ #content #comet,
+#tab-other:checked ~ #content #other {
     display: block;
 }
 
-/* Скрываем "О себе", если целевая любая другая секция или открыто любое модальное окно */
-#sun:target ~ #about,
-#moon:target ~ #about,
-#solar:target ~ #about,
-#galaxy:target ~ #about,
-#comet:target ~ #about,
-#other:target ~ #about,
-#sun-modal-1:target ~ #about,
-#sun-modal-2:target ~ #about,
-#moon-modal-1:target ~ #about,
-#moon-modal-2:target ~ #about,
-#moon-modal-3:target ~ #about,
-#moon-modal-4:target ~ #about,
-#solar-modal-1:target ~ #about,
-#solar-modal-2:target ~ #about,
-#galaxy-modal-1:target ~ #about,
-#galaxy-modal-2:target ~ #about,
-#comet-modal-1:target ~ #about,
-#comet-modal-2:target ~ #about,
-#other-modal-1:target ~ #about,
-#other-modal-2:target ~ #about {
-    display: none;
+/* Заголовки разделов */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f0d080;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.3em;
 }
 
-/* Показываем нужную секцию, когда её ID в URL */
-#sun:target,
-#moon:target,
-#solar:target,
-#galaxy:target,
-#comet:target,
-#other:target {
-    display: block;
+h3 {
+    margin-top: 20px;
+    color: #f0d080;
 }
 
-/* Показываем секцию, когда открыто её модальное окно (через соседний селектор) */
-#sun-modal-1:target ~ #sun,
-#sun-modal-2:target ~ #sun {
-    display: block;
+/* Стиль текста «О себе» */
+.about-text p {
+    margin-bottom: 10px;
 }
-
-#moon-modal-1:target ~ #moon,
-#moon-modal-2:target ~ #moon,
-#moon-modal-3:target ~ #moon,
-#moon-modal-4:target ~ #moon {
-    display: block;
+.about-text ul {
+    list-style: square;
+    padding-left: 20px;
+    margin: 10px 0 20px;
 }
-
-#solar-modal-1:target ~ #solar,
-#solar-modal-2:target ~ #solar {
-    display: block;
-}
-
-#galaxy-modal-1:target ~ #galaxy,
-#galaxy-modal-2:target ~ #galaxy {
-    display: block;
-}
-
-#comet-modal-1:target ~ #comet,
-#comet-modal-2:target ~ #comet {
-    display: block;
-}
-
-#other-modal-1:target ~ #other,
-#other-modal-2:target ~ #other {
-    display: block;
+.about-text a {
+    color: #f0d080;
 }
 
 /* Галерея */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
-.gallery-item {
+.card {
     display: block;
     text-decoration: none;
-    color: #ddd;
-    background-color: #111;
+    background: #0d0d1a;
     border: 1px solid #222;
     border-radius: 12px;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
     transition: transform 0.3s, box-shadow 0.3s;
+    aspect-ratio: 4 / 3;
+    position: relative;
 }
-
-.gallery-item:hover {
+.card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.8);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+    border-color: #f0d080;
 }
-
-.gallery-item img {
+.card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-
-.caption {
-    display: block;
-    padding: 10px 14px;
-    font-size: 0.85rem;
-    color: #bbb;
-    background-color: #050505;
+.card span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #ddd;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 /* Модальные окна */
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.93);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.92);
     z-index: 1000;
     align-items: center;
     justify-content: center;
 }
-
 .modal:target {
     display: flex;
 }
-
-.modal-content {
+.modal-inner {
     position: relative;
     max-width: 90vw;
     max-height: 90vh;
     text-align: center;
 }
-
-.modal-content img {
+.modal-inner img {
     max-width: 100%;
     max-height: 80vh;
     object-fit: contain;
     border-radius: 8px;
 }
-
-.modal-content p {
+.modal-inner p {
     margin-top: 15px;
-    font-size: 1rem;
     color: #ccc;
+    font-size: 1rem;
 }
-
 .close {
     position: absolute;
-    top: -20px;
-    right: -20px;
+    top: -10px;
+    right: -10px;
     font-size: 40px;
     color: #fff;
     text-decoration: none;
     opacity: 0.7;
-    transition: opacity 0.2s;
+    transition: 0.2s;
 }
-
 .close:hover {
     opacity: 1;
 }
@@ -238,8 +208,7 @@ footer {
     color: #555;
     border-top: 1px solid #222;
 }
-
 footer a {
-    color: #e0c080;
+    color: #f0d080;
     text-decoration: none;
 }
